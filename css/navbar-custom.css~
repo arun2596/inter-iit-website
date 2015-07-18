@@ -1,0 +1,42 @@
+.navbar-brand
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.navbar{
+
+    background:transparent;
+    border:0;
+}
+
+
+
+.menu-effects {
+    color:#3D3C3A;
+    font-weight: 900;
+    float:left;
+  -moz-transition-property: color;  /* FF4+ */
+  -moz-transition-duration: 0.5s;
+  -webkit-transition-property: color;  /* Saf3.2+, Chrome */
+  -webkit-transition-duration: 0.5s;
+  -o-transition-property: color;  /* Opera 10.5+ */
+  -o-transition-duration: 0.5s;
+  -ms-transition-property: color;  /* IE10? */
+  -ms-transition-duration: 0.5s;
+  transition-property: color;  /* Standard */
+  transition-duration: 0.5s;
+}
+
+.menu-effects:hover{
+    color:#000000;
+    font-weight: 900;
+    float:right;
+}
+
+
+
