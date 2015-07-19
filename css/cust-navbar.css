@@ -100,9 +100,22 @@ color:rgba(255,255,255,0.8);
  	}
  	.copy{
  		position: absolute;
- 		bottom: 0;
+ 		bottom: 0px;
+ 	}
+ 	#navbar-collapse{
+ 		width: 283px;
+ 		margin-left: -5px;
+ 	}
+ 	#nav{
+ 		margin-left: -5px;
  	}
 
+ }
+
+ @media (max-width: 360px){
+ 	.copy{
+ 		bottom:-25px;
+ 	}
  }
  .fbs{
  	padding-top: 4px;
