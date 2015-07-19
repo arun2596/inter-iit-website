@@ -89,7 +89,7 @@ color:rgba(255,255,255,0.8);
  @media (max-width: 767px){
  	.social{
  		clear: right;
- 		margin-top: 3px;
+ 		margin-top: 5px;
  	}
  	li.fb,li.fbs,li.t,li.g{
  		margin-right: 0;
