@@ -1,9 +1,12 @@
+.container{
+	margin-top: 40px;
+}
+
 .collapse{
-background-color:#000000;
-opacity: 0.8;
+background-color: rgba(0,0,0,0.8);
+/*opacity: 0.8;
 filter: alpha(opacity=80); /* For IE8 and earlier */
-
-
+*/
 }
 
 .navbar-default{
@@ -14,24 +17,116 @@ border:0;
 .navbar-header{
 
 	background:transparent;
+	position: relative;
+	padding-left: 10px;
 }
-
+.navbar-header>img{
+	background: white;
+	padding-right: 10px;
+	padding-left: 2px;
+	height:50px;
+}
 .navbar-default .navbar-nav > li > a{
 
 font-weight:bold;
-color:#FFFFFF;
+color:rgba(255,255,255,0.8);
 }
 
+.navbar-nav{
+	position:relative;
+	/*margin-top: 4px;*/
+	margin-left:40px;
+}
 
+.navbar-nav>li{
+	padding-left: 10px;
+/*	font-family: 'south_afirkas_2100regular';*/
+}
 .navbar-default .navbar-nav > li > a:hover
 
  {
 
-	color:#CFA906;
+	color:rgba(207, 169, 6,0.8);
 
 }
 
 .navbar #nav > .active > a {
-    color: #CFA906;
-    background-color: #000000;
+    color:rgba(207, 169, 6,0.8);
+    background-color: transparent;
 }
+
+/*@font-face {
+    font-family: 'south_afirkas_2100regular';
+    src: url('saf-webfont.eot');
+    src: url('saf-webfont.eot?#iefix') format('embedded-opentype'),
+         url('saf-webfont.woff2') format('woff2'),
+         url('saf-webfont.woff') format('woff'),
+         url('saf-webfont.ttf') format('truetype'),
+         url('saf-webfont.svg#south_afirkas_2100regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}*/
+
+.footer{
+	bottom:40px;
+}
+
+.copy{
+	text-shadow: 0.2px 0.2px black;
+}
+ .social{
+ 	float:right;
+ 	background: rgba(0,0,0,0.8);
+ 	/*opacity: 0.8;
+ 	filter: alpha(opacity=80); /* For IE8 and earlier */*/
+ }
+
+ .fbs{
+ 	padding-top: 4px;
+ 	padding-bottom: 4px;
+ 	margin-left: 2px;
+ 	margin-right: 12px;
+ }
+
+ .g{
+ 	padding-top: 2.5px;
+ 	padding-bottom: 2.5px;
+ }
+
+.t{
+	padding-top: 2.5px;
+ 	padding-bottom: 2.5px;
+	margin-right: 5px;
+}
+ .fb{
+ 	padding-top: 2.5px;
+ 	padding-bottom: 2.5px;
+ }
+ li.fb:hover,li.fbs:hover{
+ 	background: rgba(59, 89, 152,0.8);
+ }
+ li.t:hover{
+ 	background: rgba( 64,153,255,0.8);
+ }
+ li.g:hover{
+ 	background: rgba(211, 72, 54,0.8);
+ }
+ .social>a{
+ 	color:rgba(255,255,255,0.8);
+ 	font-size: 12px;
+ 	padding-left: 5px;
+ 	padding-right: 5px;
+ }
+
+ li .fb:hover{
+ 	background: rgba(0,0,255,0.8);
+ }
+ .social>a:hover{
+ 	text-decoration: none;
+ }
+
+ img .social{
+ 	opacity:0.8;
+ 	filter: alpha(opacity=80); /* For IE8 and earlier */;
+ }
