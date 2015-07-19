@@ -44,6 +44,8 @@ color:rgba(255,255,255,0.8);
 
 .navbar-nav>li{
 	padding-left: 10px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size: 13px;
 /*	font-family: 'south_afirkas_2100regular';*/
 }
 .navbar-default .navbar-nav > li > a:hover
