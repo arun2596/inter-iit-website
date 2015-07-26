@@ -3,7 +3,7 @@
 }
 
 .navbar-collapse{
-background-color: rgba(0,0,0,0.8);
+/*background-color: rgba(0,0,0,0.8);*/
 /*opacity: 0.8;
 filter: alpha(opacity=80); /* For IE8 and earlier */
 */
@@ -25,10 +25,16 @@ border:0;
 	padding-left: 10px;
 }
 .navbar-header>img{
-	background: white;
+	background: transparent;
 	padding-right: 10px;
-	padding-left: 2px;
+	padding-left: 10px;
 	height:50px;
+}
+.small{
+	background-color: rgba(0,0,0,0.8);
+	width: 15px;
+	height: 50px;
+	position: absolute;
 }
 .navbar-default .navbar-nav > li > a{
 
@@ -39,10 +45,11 @@ color:rgba(255,255,255,0.8);
 .navbar-nav{
 	position:relative;
 	/*margin-top: 4px;*/
-	margin-left:40px;
+	/*margin-left:40px;*/
 }
 
 .navbar-nav>li{
+	background-color: rgba(0,0,0,0.8);
 	padding-left: 10px;
 	font-family: "Comic Sans MS", cursive, sans-serif;
 	font-size: 13px;
@@ -107,12 +114,14 @@ color:rgba(255,255,255,0.8);
  	}
  	#navbar-collapse{
  		width: 283px;
- 		margin-left: -5px;
+ 		/*margin-left: -5px;*/
  	}
  	#nav{
  		margin-left: -5px;
  	}
-
+ 	.small{
+ 		left:2px;
+ 	}
  }
 
  @media (max-width: 360px){
