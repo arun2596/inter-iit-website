@@ -113,7 +113,7 @@ color:rgba(255,255,255,0.8);
  		bottom: 0px;
  	}
  	#navbar-collapse{
- 		width: 283px;
+ 		width: 291px;
  		/*margin-left: -5px;*/
  	}
  	#nav{
@@ -121,6 +121,9 @@ color:rgba(255,255,255,0.8);
  	}
  	.small{
  		left:2px;
+ 	}
+ 	.navbar-collapse{
+ 		padding-left: 7px;
  	}
  }
 
