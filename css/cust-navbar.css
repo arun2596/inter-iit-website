@@ -51,6 +51,7 @@ color:rgba(255,255,255,0.8);
 .navbar-nav>li{
 	background-color: rgba(0,0,0,0.8);
 	padding-left: 10px;
+	padding-right: 5px;
 	font-family: "Comic Sans MS", cursive, sans-serif;
 	font-size: 13px;
 /*	font-family: 'south_afirkas_2100regular';*/
@@ -68,6 +69,14 @@ color:rgba(255,255,255,0.8);
     background-color: transparent;
 }
 
+.logo{
+	left: 50%;
+	top: 50%;
+	margin-top: -198px;
+	margin-left: -320px;
+	z-index: -1;
+	position: absolute;
+}
 /*@font-face {
     font-family: 'south_afirkas_2100regular';
     src: url('saf-webfont.eot');
@@ -113,7 +122,7 @@ color:rgba(255,255,255,0.8);
  		bottom: 0px;
  	}
  	#navbar-collapse{
- 		width: 283px;
+ 		width: 291px;
  		/*margin-left: -5px;*/
  	}
  	#nav{
@@ -121,6 +130,14 @@ color:rgba(255,255,255,0.8);
  	}
  	.small{
  		left:2px;
+ 	}
+ 	.navbar-collapse{
+ 		padding-left: 7px;
+ 	}
+ 	.logo{
+ 		width: 360px;
+ 		margin-left: -180px;
+ 		margin-top: -112px;
  	}
  }
 
