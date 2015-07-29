@@ -1,5 +1,5 @@
 .container{
-	margin-top: 40px;
+	margin-top: 50px;
 }
 
 .navbar-collapse{
@@ -71,7 +71,7 @@ color:rgba(255,255,255,0.8);
 
 .logo{
 	left: 50%;
-	top: 50%;
+	top: 55%;
 	margin-top: -198px;
 	margin-left: -320px;
 	z-index: -1;
@@ -91,7 +91,7 @@ color:rgba(255,255,255,0.8);
 }*/
 
 .footer{
-	bottom:40px;
+	bottom:50px;
 }
 
 .copy{
@@ -136,6 +136,7 @@ color:rgba(255,255,255,0.8);
  	}
  	.logo{
  		width: 360px;
+ 		top:50%;
  		margin-left: -180px;
  		margin-top: -112px;
  	}
