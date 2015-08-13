@@ -10,7 +10,6 @@ html{
 /*background-color: rgba(0,0,0,0.8);*/
 /*opacity: 0.8;
 filter: alpha(opacity=80); /* For IE8 and earlier */
-*/
 }
 
 .navbar-default{
@@ -119,6 +118,7 @@ color:rgba(255,255,255,0.8);
 
 .footer{
 	bottom:50px;
+	z-index: -1;
 }
 
 .copy{
@@ -480,6 +480,13 @@ color:rgba(255,255,255,0.8);
  @media (max-width:310px){
  	.navbar-header>img{
  		/*width: 220px;*/
+ 		clip: rect(0px,84px,40px,0px);
+    	position: absolute;
+	}
+ 
+ 	.logo{
+ 		width: 250px;
+ 		margin-left: -125px;
  	}
  }
 /* .fbs{
