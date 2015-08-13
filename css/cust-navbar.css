@@ -480,7 +480,7 @@ color:rgba(255,255,255,0.8);
  @media (max-width:310px){
  	.navbar-header>img{
  		/*width: 220px;*/
- 		clip: rect(0px,84px,40px,0px);
+ 		clip: rect(0px,87px,40px,0px);
     	position: absolute;
 	}
  
