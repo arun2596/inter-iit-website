@@ -24,6 +24,16 @@ body {
 </head>
 <body>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -44,9 +54,12 @@ body {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <img src="static/icons/brand.png" >
+      <img id="image" src="static/icons/brand.png">
     </div>
-    
+    <script>
+      $('#image').hover(
+      function(){$(this).attr('src', 'static/icons/brand2.png');},function(){$(this).attr('src', 'static/icons/brand.png');});
+    </script>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse">
      
@@ -66,16 +79,17 @@ body {
 </nav>
 <div class="footer navbar-fixed-bottom">
   <div class="container">
+    <div class="fb-like" data-href="https://www.facebook.com/interiit14" data-width="100" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false"></div>
     <ul class="list-inline">
-    <li><div class="copy">
+    <!-- <li><div class="copy">
     &copy;  all copyrights reserved to iitmadras
-    </div></li>
+    </div></li> -->
   
     <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a">
       <li class="social"><a href="#" class="hi-icon hi-icon-contact">contact us</a></li>
       <li class="social"><a href="#" class="hi-icon hi-icon-youtube">youtube</a></li>
-      <li class="social"><a href="#" class="hi-icon hi-icon-googleplus">googleplus</a></li>
       <li class="social"><a href="#" class="hi-icon hi-icon-twitter">twitter</a></li>
+      <li class="social"><a href="#" class="hi-icon hi-icon-googleplus">googleplus</a></li>
       <li class="social"><a href="#" class="hi-icon hi-icon-fblike">fblike</a></li>
 
       <!-- 

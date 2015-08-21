@@ -79,7 +79,7 @@ color:rgba(255,255,255,0.8);
 }
 
 .navbar #nav > .active > a {
-    color:rgba(207, 169, 6,0.8);
+    color:rgba(207, 169, 6,1);
     background-color: transparent;
 }
 
@@ -104,7 +104,7 @@ color:rgba(255,255,255,0.8);
 	overflow: hidden;
 	padding: 10px 0;
 	max-width: 0;
-	border-bottom: 2px solid rgba(207, 169, 6,0.8);
+	/*border-bottom: 2px solid rgba(207, 169, 6,0.8);*/
 	color: rgba(207, 169, 6, 1);
 	content: attr(data-hover);
 	-webkit-transition: max-width 0.5s;
@@ -149,7 +149,7 @@ color:rgba(255,255,255,0.8);
 
 .hi-icon-wrap {
 	text-align: center;
-	margin: 0 auto;
+	margin-right: 35px;
 	float: right;
 }
 
@@ -217,14 +217,15 @@ color:rgba(255,255,255,0.8);
 
 /* Effect 5 */
 .hi-icon-effect-5 .hi-icon {
-	box-shadow: 0 0 0 4px rgba(255,255,255,1);
+	box-shadow: 0 0 0 4px rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.8);
 	overflow: hidden;
-	-webkit-transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-	-moz-transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-	transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+	-webkit-transition: background 0.5s, color 0.5s, box-shadow 0.5s;
+	-moz-transition: background 0.5s, color 0.5s, box-shadow 0.5s;
+	transition: background 0.5s, color 0.5s, box-shadow 0.5s;
 }
-.hi-icon-fblike{
-	background-color: #3e5b98;
+/*.hi-icon-fblike{
+	background-color: rgba(0,0,0,0.8);
 }
 .hi-icon-contact{
 	background-color: #4dc247;
@@ -237,46 +238,46 @@ color:rgba(255,255,255,0.8);
 }
 .hi-icon-youtube{
 	background-color: #e02a20;
-}
+}*/
 .hi-icon-effect-5 .hi-icon:after {
 	display: none;
 }
 .hi-icon-effect-5 .hi-icon-contact:hover {
-	background: rgba(255,255,255,1);
-	box-shadow: 0 0 0 8px rgba(255,255,255,0.3);	
-	color: #4dc247;
+	background: #4dc247;
+	box-shadow: 0 0 0 8px rgba(77,194,71,0.5);	
+	color: rgba(255,255,255,1);
 }
 .hi-icon-effect-5 .hi-icon-fblike:hover{
-	background: rgba(255,255,255,1);
-	box-shadow: 0 0 0 8px rgba(255,255,255,0.3);
-	color:#3e5b98;	
+	background: #3e5b98;
+	box-shadow: 0 0 0 8px rgba(62,91,152,0.5);
+	color:rgba(255,255,255,1);	
 }
 .hi-icon-effect-5 .hi-icon-twitter:hover{
-	background: rgba(255,255,255,1);
-	box-shadow: 0 0 0 8px rgba(255,255,255,0.3);
-	color:#4da7de;
+	background: #4da7de;
+	box-shadow: 0 0 0 8px rgba(77,167,222,0.5);
+	color:rgba(255,255,255,1);
 }
 .hi-icon-effect-5 .hi-icon-youtube:hover{
-	background: rgba(255,255,255,1);
-	box-shadow: 0 0 0 8px rgba(255,255,255,0.3);
-	color:#e02a20;
+	background: #e02a20;
+	box-shadow: 0 0 0 8px rgba(224,42,32,0.5);
+	color:rgba(255,255,255,1);
 }
 .hi-icon-effect-5 .hi-icon-googleplus:hover{
-	background: rgba(255,255,255,1);
-	box-shadow: 0 0 0 8px rgba(255,255,255,0.3);
-	color: #d93e2d;
+	background: #d93e2d;
+	box-shadow: 0 0 0 8px rgba(217,62,45,0.5);
+	color:rgba(255,255,255,1);
 }
 /*
 .hi-icon-effect-5 .hi-icon-mobile:hover {
 	background: #702fa8;
 	color: rgba(255,255,255,1);
-	box-shadow: 0 0 0 8px rgba(255,255,255,0.3);
+	box-shadow: 0 0 0 8px rgba(255,255,255,0.5);
 }*/
 
 .hi-icon-effect-5a .hi-icon:hover:before {
-	-webkit-animation: toRightFromLeft 0.3s forwards;
-	-moz-animation: toRightFromLeft 0.3s forwards;
-	animation: toRightFromLeft 0.3s forwards;
+	-webkit-animation: toRightFromLeft 0.5s forwards;
+	-moz-animation: toRightFromLeft 0.5s forwards;
+	animation: toRightFromLeft 0.5s forwards;
 }
 
 @-webkit-keyframes toRightFromLeft {
@@ -460,6 +461,9 @@ color:rgba(255,255,255,0.8);
 	.footer{
 		z-index: 99;
 	}
+	.hi-icon-wrap{
+		margin: 0;
+	}
  }
 
  @media (max-width: 360px){
@@ -526,7 +530,7 @@ color:rgba(255,255,255,0.8);
  	background: rgba(211, 72, 54,0.8);
  }*/
  .social>a{
- 	color:#fff;
+ 	color:rgba(255,255,255,1);
  	font-size: 12px;
  	padding-left: 5px;
  	padding-right: 5px;
