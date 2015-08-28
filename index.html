@@ -1,3 +1,4 @@
+<!--youtube channel link+social buttons-->
 <html>
 <head>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -17,31 +18,242 @@ body {
         background-size: cover;
         background-repeat: no-repeat;
       }
-
+@-moz-document url-prefix() { 
+  .trivia {
+     bottom:-38px;
+  }
+}
 
 </style>
 
 </head>
 <body>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
+  <!-- Place this tag in your head or just before your close body tag. -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+    
+    checkSize();
+
+    $(window).resize(checkSize);
+
+    var array=["Welcome to Inter IIT 2015","Wilt Chamberlain didn't win MVP the year he score 50.4 points and grabbedD 22.9 rebounds per game."];
+    i=1;
+    $('#text').text(array[0]);
+
+    // function func1(){
+    //   $('.facts').css({
+    //     "-webkit-transform":"translateX(50px)",
+    //     "transform":"translateX(50px)"
+    //   });​
+    // }
+    setInterval(function(){
+      $('.facts').css({
+        "-webkit-transform":"translateX(-100%)",
+        "transform":"translateX(-100%)"
+      });
+        
+      setTimeout(function(){
+        $('.facts').css({
+        "-webkit-transform":"translateX(0px)",
+        "transform":"translateX(0px)"
+      });
+        $('#text').text(array[i]);
+      i++;
+      i=i%2;
+      },2000);
+      
+      // func2();  
+    },16000);
+
+    $(function(){
+  $box = $('#text');
+  $box.children().each(function(){
+    if ($box.width() < $(this).width()) {
+      $(this).wrap('<marquee>');
+    }
+  });
+});
+    setInterval(function(){
+      setTimeout(function(){
+      $('.hi-icon-trivia').css({
+        "background": "#f5dc1d",
+ "box-shadow": "0 0 0 8px rgba(245,220,29,0.6)",
+  "color":"rgba(255,255,255,1)"  
+
+      });
+    },500);
+      
+        $('.hi-icon-trivia').css({
+        "box-shadow": "0 0 0 4px rgba(0,0,0,0.6)",
+  "background-color": "rgba(0,0,0,0.8)",
+  "color":"rgba(255,255,255,1)"  
+
+      });
+      
+    },1500);
+    
+    // function func(){
+    //   setTimeout(fun1,3000);
+    //   setTimeout(function{})
+    // },5000);
+
+});
+
+function checkSize(){
+    if($(".container").css("width")>="1000px"){
+      $('#image').hover(
+      function(){$(this).attr('src', 'static/icons/brand2.png');
+      $('.circle').css({
+        "background": "rgba(0,0,0,0.8)",
+        "box-shadow": "0 0 0 45px rgba(0,0,0,0.8)",
+        WebkitTransition: "background 0.1s, color 0.1s, box-shadow 0.1s",  
+        MozTransition: "background 0.1s, color 0.1s,box-shadow 0.1s",
+       transition: "background 0.1s, color 0.1s, box-shadow 0.1s"});
+      },function(){$(this).attr('src', 'static/icons/brand.png');
+      $('.circle').css({
+        "background":"transparent",
+        "box-shadow": "0 0 0 0px rgba(0,0,0,0.8)",
+        WebkitTransition: "background 0.1s, color 0.1s, box-shadow 0.1s",  
+        MozTransition: "background 0.1s, color 0.1s,box-shadow 0.1s",
+       transition: "background 0.1s, color 0.1s, box-shadow 0.1s"});
+    });
+    }
+    
+    if($(".container").css("width") == "830px"){
+
+      $('#image').hover(
+      function(){$(this).attr('src', 'static/icons/brand2.png');
+      $('.circle').css({
+        "background": "rgba(0,0,0,0.8)",
+        "box-shadow": "0 0 0 30px rgba(0,0,0,0.8)",
+        WebkitTransition: "background 0.1s, color 0.1s, box-shadow 0.1s",  
+        MozTransition: "background 0.1s, color 0.1s,box-shadow 0.1s",
+       transition: "background 0.1s, color 0.1s, box-shadow 0.1s"});
+      },function(){$(this).attr('src', 'static/icons/brand.png');
+      $('.circle').css({
+        "background":"transparent",
+        "box-shadow": "0 0 0 0px rgba(0,0,0,0.8)",
+        WebkitTransition: "background 0.1s, color 0.1s, box-shadow 0.1s",  
+        MozTransition: "background 0.1s, color 0.1s,box-shadow 0.1s",
+       transition: "background 0.1s, color 0.1s, box-shadow 0.1s"});
+    });
+    }
+    if($(".social").css("clear")=="right"){
+      $('#image').hover(
+      function(){$(this).attr('src', 'static/icons/brand2.png');
+      $('.circle').css({
+        "background": "rgba(0,0,0,0.8)",
+        "box-shadow": "0 0 0 35px rgba(0,0,0,0.8)",
+        WebkitTransition: "background 0.1s, color 0.1s, box-shadow 0.1s",  
+        MozTransition: "background 0.1s, color 0.1s,box-shadow 0.1s",
+       transition: "background 0.1s, color 0.1s, box-shadow 0.1s"});
+      },function(){$(this).attr('src', 'static/icons/brand.png');
+      $('.circle').css({
+        "background":"transparent",
+        "box-shadow": "0 0 0 0px rgba(0,0,0,0.8)",
+        WebkitTransition: "background 0.1s, color 0.1s, box-shadow 0.1s",  
+        MozTransition: "background 0.1s, color 0.1s,box-shadow 0.1s",
+       transition: "background 0.1s, color 0.1s, box-shadow 0.1s"});
+    });    
+    }
+}
+    
+
+</script>
+
+
+<!--<script>
+
+   function myCallback(plusone) {
+
+      window.alert("URL: " + plusone.href + " state: " + plusone.state);
+
+   }
+
+</script>-->
+<!--<script type="text/javascript">
+
+    $(document).ready(function(){
+        var tableData = document.getElementById('modtab').getElementsByTagName('tbody').item(0);
+
+        var rowData = tableData.getElementsByTagName('tr'); 
+
+        for(var i = 0; i < rowData.length - 1; i++){
+            for(var j = 0; j < rowData.length - (i + 1); j++){
+
+                if(parseInt(rowData.item(j).getElementsByTagName('td').item(2).innerHTML) < parseInt(rowData.item(j+1).getElementsByTagName('td').item(2).innerHTML)){
+                    tableData.insertBefore(rowData.item(j+1),rowData.item(j));
+                }
+            }
+        }
+
+        var $code = $('.body1').clone();
+        $('.body2').append($code);
+
+    });
+    </script>
+-->
 <img class="logo" src="static/img/middlecup.png">
+<!-- 
+<div id="tally" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Leaderboard</h4>
+      </div>
+      <div class="modal-body">
+        <table id="modtab">
+  <thead>
+    <tr>
+    <th>Tally</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody class="body1">
+  <tr>
+    <td>IIT Madras</td>
+    <td><img src="static/icons/iitm.png"></td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>IIT Bombay</td>
+    <td><img src="static/icons/iitm.png"></td>
+    <td>2</td>
+  </tr> 
+  <tr>
+    <td>IIT Delhi</td>
+    <td><img src="static/icons/iitm.png"></td>
+    <td>2</td>
+  </tr>
+   <tr>
+    <td>IIT Kharagpur</td>
+    <td><img src="static/icons/iitm.png"></td>
+    <td>0</td>
+  </tr>
+  </tbody>
+</table>
+      </div>
+       <div class="modal-footer">
+        <button type="button" class="btn btn-default" onClick="javascript:sortData();">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+ -->
 <nav class="navbar navbar-default" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="container">
@@ -54,11 +266,10 @@ body {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <div class="circle"></div>
       <img id="image" src="static/icons/brand.png">
     </div>
-    <script>
-      $('#image').hover(
-      function(){$(this).attr('src', 'static/icons/brand2.png');},function(){$(this).attr('src', 'static/icons/brand.png');});
+    
     </script>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -79,18 +290,37 @@ body {
 </nav>
 <div class="footer navbar-fixed-bottom">
   <div class="container">
-    <div class="fb-like" data-href="https://www.facebook.com/interiit14" data-width="100" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false"></div>
     <ul class="list-inline">
+      <div class="hi-icon-effect-5">
+      <li class="social" style="float:left;"><a href="#" class="hi-icon hi-icon-trivia"></a></li>
+      </div>
+      <div class="trivia">
+      <li class="facts"><span id="text">text here</span></li>
+    </div>
+   <!--   <li><div class="leader" onclick="">
+<table id="ld">
+  <thead data-toggle="modal" data-target="#tally" style="cursor:pointer;" >
+    <tr>
+    <th>Tally</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody class="body2">
+  </tbody>
+</table>
+</div></li>
+-->
     <!-- <li><div class="copy">
     &copy;  all copyrights reserved to iitmadras
     </div></li> -->
   
     <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a">
       <li class="social"><a href="#" class="hi-icon hi-icon-contact">contact us</a></li>
-      <li class="social"><a href="#" class="hi-icon hi-icon-youtube">youtube</a></li>
-      <li class="social"><a href="#" class="hi-icon hi-icon-twitter">twitter</a></li>
-      <li class="social"><a href="#" class="hi-icon hi-icon-googleplus">googleplus</a></li>
-      <li class="social"><a href="#" class="hi-icon hi-icon-fblike">fblike</a></li>
+
+      <li class="social"><a href="#" class="hi-icon hi-icon-youtube">youtube</a></li><!-- 
+      <li class="social"><a href="https://twitter.com/intent/follow?screen_name=twitter" class="hi-icon hi-icon-twitter">Follow @interiit</a></li> -->
+      <!-- <li class="social"><div class="g-plusone" data-href="http://www.google.com" data-callback="myCallback" data-size="tall" expandTo="top"></div><a href="#" class="hi-icon hi-icon-googleplus">googleplus</a></li> -->
+      <li class="social"><a href="https://www.facebook.com/interiit14" target=_blank class="hi-icon hi-icon-fblike">fblike</a></li>
 
       <!-- 
         <li class="social g"><a href="#"><img src="static/icons/google_plus.png" height="20px">  Share</a></li>
