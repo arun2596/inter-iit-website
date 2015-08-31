@@ -8,36 +8,56 @@
 
 <style>
 
-{ margin: 0; padding: 0; }
-
-body { 
-        background: url('static/img/backgroundplain.jpg');
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
 @-moz-document url-prefix() { 
   .trivia {
      bottom:-38px;
   }
 }
-
+#background {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: -10;
+            }
 </style>
 
 </head>
-<body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+<script src="js/rainyday.min.js"></script>
+<script>
+            function run() {
+                var image = document.getElementById('background');
+                image.onload = function() {
+                    var engine = new RainyDay({
+                        image: this,
+                        gravityAngle: Math.PI / 9
+                    });
+                    engine.trail = engine.TRAIL_SMUDGE;
+                    engine.rain([ [1, 0, 1000], [3, 3, 1] ], 100);
+                };
+                image.crossOrigin = 'anonymous';
+                image.src = 'http://i.imgur.com/VuX2Nf0.jpg';
 
+                // hide info container
+                document.getElementById('infobox').children[0].style.visibility = 'visible';
+                setTimeout(function(){
+                    // remove inline style -otherwise the hover effect would not be effective
+                    document.getElementById('infobox').children[0].style.visibility = '';
+                }, 5000);
+           }
+</script>
+
+<body onload="run();">
+<img id="background" alt="background" src="static/img/sky.jpg" />
   <!-- Place this tag in your head or just before your close body tag. -->
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -46,7 +66,7 @@ $(document).ready(function() {
 
     $(window).resize(checkSize);
 
-    var array=["Welcome to Inter IIT 2015","Wilt Chamberlain didn't win MVP the year he score 50.4 points and grabbedD 22.9 rebounds per game."];
+    var array=["Welcome to Inter IIT 2015","Wilt Chamberlain didn't win MVP the year he scored 50.4 points and grabbed 22.9 rebounds per game."];
     i=1;
     $('#text').text(array[0]);
 
@@ -68,21 +88,41 @@ $(document).ready(function() {
         "transform":"translateX(0px)"
       });
         $('#text').text(array[i]);
+        $box = $('#wrap');
+    // $box.children().each(function(){
+    if ($box.width() < $('#text').width()) {
+      $('#text').wrap('<marquee>');
+    }
+    if ($box.width() > $('#text').width()){
+      $('#text').unwrap();
+    }
+    
       i++;
       i=i%2;
       },2000);
-      
-      // func2();  
+        
     },16000);
 
-    $(function(){
-  $box = $('#text');
-  $box.children().each(function(){
-    if ($box.width() < $(this).width()) {
-      $(this).wrap('<marquee>');
+   $(".navbar-toggle").click(function(){
+    if ($(".collapse.in").css("display")!="block"){
+      $('.logo').css({
+        "-webkit-filter": "blur(5px)",
+  "-moz-filter": "blur(5px)",
+  "-o-filter": "blur(5px)",
+  "-ms-filter": "blur(5px)",
+  "filter": "blur(5px)"
+      });
+    }
+    if ($(".collapse.in").css("display")=="block"){
+      $('.logo').css({
+        "-webkit-filter": "blur(0px)",
+  "-moz-filter": "blur(0px)",
+  "-o-filter": "blur(0px)",
+  "-ms-filter": "blur(0px)",
+  "filter": "blur(0px)"
+      });
     }
   });
-});
     setInterval(function(){
       setTimeout(function(){
       $('.hi-icon-trivia').css({
@@ -116,17 +156,37 @@ function checkSize(){
       $('.circle').css({
         "background": "rgba(0,0,0,0.8)",
         "box-shadow": "0 0 0 45px rgba(0,0,0,0.8)",
-        WebkitTransition: "background 0.1s, color 0.1s, box-shadow 0.1s",  
-        MozTransition: "background 0.1s, color 0.1s,box-shadow 0.1s",
-       transition: "background 0.1s, color 0.1s, box-shadow 0.1s"});
+        WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
+        MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+       transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
       },function(){$(this).attr('src', 'static/icons/brand.png');
       $('.circle').css({
         "background":"transparent",
         "box-shadow": "0 0 0 0px rgba(0,0,0,0.8)",
-        WebkitTransition: "background 0.1s, color 0.1s, box-shadow 0.1s",  
-        MozTransition: "background 0.1s, color 0.1s,box-shadow 0.1s",
-       transition: "background 0.1s, color 0.1s, box-shadow 0.1s"});
+        WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
+        MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+       transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
     });
+  //     $('.logo').hover(
+  //       function(){
+  //         $('.logo').css({
+  //       "-webkit-filter": "blur(5px)",
+  // "-moz-filter": "blur(5px)",
+  // "-o-filter": "blur(5px)",
+  // "-ms-filter": "blur(5px)",
+  // "filter": "blur(5px)"
+  //     });
+  //       },
+  //       function(){
+  //         $('.logo').css({
+  //       "-webkit-filter": "blur(0px)",
+  // "-moz-filter": "blur(0px)",
+  // "-o-filter": "blur(0px)",
+  // "-ms-filter": "blur(0px)",
+  // "filter": "blur(0px)"
+  //     });
+  //       }
+  //       );
     }
     
     if($(".container").css("width") == "830px"){
@@ -136,17 +196,37 @@ function checkSize(){
       $('.circle').css({
         "background": "rgba(0,0,0,0.8)",
         "box-shadow": "0 0 0 30px rgba(0,0,0,0.8)",
-        WebkitTransition: "background 0.1s, color 0.1s, box-shadow 0.1s",  
-        MozTransition: "background 0.1s, color 0.1s,box-shadow 0.1s",
-       transition: "background 0.1s, color 0.1s, box-shadow 0.1s"});
+        WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
+        MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+       transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
       },function(){$(this).attr('src', 'static/icons/brand.png');
       $('.circle').css({
         "background":"transparent",
         "box-shadow": "0 0 0 0px rgba(0,0,0,0.8)",
-        WebkitTransition: "background 0.1s, color 0.1s, box-shadow 0.1s",  
-        MozTransition: "background 0.1s, color 0.1s,box-shadow 0.1s",
-       transition: "background 0.1s, color 0.1s, box-shadow 0.1s"});
+        WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
+        MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+       transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
     });
+  //     $('.logo').hover(
+  //       function(){
+  //         $('.logo').css({
+  //       "-webkit-filter": "blur(5px)",
+  // "-moz-filter": "blur(5px)",
+  // "-o-filter": "blur(5px)",
+  // "-ms-filter": "blur(5px)",
+  // "filter": "blur(5px)"
+  //     });
+  //       },
+  //       function(){
+  //         $('.logo').css({
+  //       "-webkit-filter": "blur(0px)",
+  // "-moz-filter": "blur(0px)",
+  // "-o-filter": "blur(0px)",
+  // "-ms-filter": "blur(0px)",
+  // "filter": "blur(0px)"
+  //     });
+  //       }
+  //       );
     }
     if($(".social").css("clear")=="right"){
       $('#image').hover(
@@ -154,16 +234,16 @@ function checkSize(){
       $('.circle').css({
         "background": "rgba(0,0,0,0.8)",
         "box-shadow": "0 0 0 35px rgba(0,0,0,0.8)",
-        WebkitTransition: "background 0.1s, color 0.1s, box-shadow 0.1s",  
-        MozTransition: "background 0.1s, color 0.1s,box-shadow 0.1s",
-       transition: "background 0.1s, color 0.1s, box-shadow 0.1s"});
+        WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
+        MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+       transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
       },function(){$(this).attr('src', 'static/icons/brand.png');
       $('.circle').css({
         "background":"transparent",
         "box-shadow": "0 0 0 0px rgba(0,0,0,0.8)",
-        WebkitTransition: "background 0.1s, color 0.1s, box-shadow 0.1s",  
-        MozTransition: "background 0.1s, color 0.1s,box-shadow 0.1s",
-       transition: "background 0.1s, color 0.1s, box-shadow 0.1s"});
+        WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
+        MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+       transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
     });    
     }
 }
@@ -295,7 +375,9 @@ function checkSize(){
       <li class="social" style="float:left;"><a href="#" class="hi-icon hi-icon-trivia"></a></li>
       </div>
       <div class="trivia">
-      <li class="facts"><span id="text">text here</span></li>
+      <li class="facts">
+        <div id="wrap"><span id="text">text here</span></div>
+      </li>
     </div>
    <!--   <li><div class="leader" onclick="">
 <table id="ld">
@@ -317,7 +399,7 @@ function checkSize(){
     <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a">
       <li class="social"><a href="#" class="hi-icon hi-icon-contact">contact us</a></li>
 
-      <li class="social"><a href="#" class="hi-icon hi-icon-youtube">youtube</a></li><!-- 
+      <li class="social"><a href="https://www.youtube.com/channel/UCF9MpmTR7MBjFj8t426aA3w" target=_blank class="hi-icon hi-icon-youtube">youtube</a></li><!-- 
       <li class="social"><a href="https://twitter.com/intent/follow?screen_name=twitter" class="hi-icon hi-icon-twitter">Follow @interiit</a></li> -->
       <!-- <li class="social"><div class="g-plusone" data-href="http://www.google.com" data-callback="myCallback" data-size="tall" expandTo="top"></div><a href="#" class="hi-icon hi-icon-googleplus">googleplus</a></li> -->
       <li class="social"><a href="https://www.facebook.com/interiit14" target=_blank class="hi-icon hi-icon-fblike">fblike</a></li>

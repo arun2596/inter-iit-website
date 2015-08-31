@@ -6,7 +6,12 @@ html{
 	margin-top: 50px;
 }
 
+canvas{
+	z-index: -1;
+}
+
 .navbar-collapse{
+	border: 0;
 /*background-color: rgba(0,0,0,0.8);*/
 /*opacity: 0.8;
 filter: alpha(opacity=80); /* For IE8 and earlier */
@@ -15,7 +20,7 @@ filter: alpha(opacity=80); /* For IE8 and earlier */
 .navbar-default{
 background-color:transparent;
 border:0;
-z-index: 1000;
+z-index: 100;
 }
 
 .navbar-toggle{
@@ -96,10 +101,12 @@ color:rgba(255,255,255,0.8);
 
 .logo{
 	left: 25%;
-	top: 25%;
+	top: 22.5%;
 	width:50%;
-	z-index: -10;
+	z-index: 0;
 	position: absolute;
+	-webkit-transition:all 0.2s;
+	transition: all 0.2s;
 }
 /* Effect 11: text fill based on Lea Verou's animation http://dabblet.com/gist/6046779 */
 .cl-effect-11 a {
@@ -140,10 +147,10 @@ color:rgba(255,255,255,0.8);
     color: white;
     overflow: hidden;
     white-space: nowrap;
-    height: 25px;
+    height: 30px;
     border-radius: 4px;
-    padding-top: 2px;
-    padding-left: 20px;
+    padding-top:  5px;
+    padding-left: 30px;
     /*left: 1px;*/
     box-shadow: 0 0 0 2px rgba(0,0,0,0.6);
     bottom: -5px;
@@ -274,9 +281,9 @@ th {
 	overflow-x: hidden;
     width: 50%;
     /* height: 25px; */
-    height: 32px;
-    left: 48px;
-     bottom: -32px; 
+    height: 40px;
+    left: 35px;
+     bottom: -38px; 
     position: relative;	
 }
 
@@ -438,11 +445,6 @@ th {
 		top: -24px;
 		left: 60px;
 	}
-	.trivia{
-		left: 48px;
-    position: relative;
-    bottom: -32px;
-	}
 	.hi-icon-trivia{
 		position: absolute;
 		bottom: 0;
@@ -545,6 +547,8 @@ th {
  		left:50%;
  		margin-left: -180px;
  		margin-top: -112px;
+ 		-webkit-transition:all 0.5s;
+ 		transition:all 0.5s;
  	}
  	.navbar-header>img{
  		top:0;
@@ -565,14 +569,19 @@ th {
 		top: 20px;
 		left: 56px;
 	}
+
+.navbar-nav {
+    margin: 12.5px -15px;
+}
 	.hi-icon-trivia{
 		position: absolute;
 		bottom: 0;
+		left: 10px;
 	}
  
  .trivia{
- 	    left: 58px;
-    bottom: 3px;
+ 	    left: 30px;
+    bottom: -2px;
     position: absolute;
  }
 }
@@ -595,6 +604,18 @@ th {
 	.circle{
 		top: 20px;
 		left: 51px;
+	}
+	.trivia{
+		bottom:-23px;
+		width: 80%;
+	}
+	.hi-icon-trivia{
+		bottom:-20px;
+		position: absolute;
+	}
+	.hi-icon-wrap {
+    	position: relative;
+    	bottom: 20px;
 	}
  }
 
