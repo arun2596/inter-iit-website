@@ -20,7 +20,7 @@
                 position: absolute;
                 z-index: -10;
             }
-      #map_wrapper {
+  #wrapper,#map_wrapper {
         position: absolute;
         right: 0;
   top: 0;
@@ -33,13 +33,22 @@
     z-index: 10000;
 }
 
-#map_canvas {
+#map_canvas{
   margin:auto;
+  position: relative;
   top: 6%;
     width: 60%;
     height: 80%;
 }
-#close{
+#underconst{
+  background: url('static/img/underconst.gif') no-repeat center;
+  margin:auto;
+  position: relative;
+  top: 15%;
+    width: 40%;
+    height: 60%;
+}
+#close,#close1{
   color: white;
   cursor: pointer;
     background: rgba(0,0,0,1);
@@ -52,7 +61,21 @@
     left: 80%;
     z-index: 10001;
 }
-#close:before{
+#close1{
+  color: white;
+  cursor: pointer;
+    background: rgba(0,0,0,1);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.5);
+    position: relative;
+    top: 16%;
+    left: 70%;
+    z-index: 10001;
+
+}
+#close:before,#close1:before{
   content: "\f2d7";
   font-family: 'Ionicons';
   speak: none;
@@ -193,8 +216,37 @@ $(function() {
        $('#close').click(function() {
            $('#map_wrapper').css({'visibility':'hidden'});
            return false;
+       });
+       $('#close1').click(function() {
+           $('#wrapper').css({'visibility':'hidden'});
+           return false;
+       });
+       $('.under').click(function() {
+           $('#wrapper').css({'visibility':'visible'});
+           return false;
        });        
+       
    });
+$(document).mouseup(function (e)
+{
+    var container = $("#underconst");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        $('#wrapper').css({'visibility':'hidden'});
+    }
+});
+$(document).mouseup(function (e)
+{
+    var container = $("#map_canvas");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        $('#map_wrapper').css({'visibility':'hidden'});
+    }
+});
 </script>
 <body onload="run();">
 <img id="background" alt="background" src="static/img/sky.jpg" />
@@ -445,7 +497,10 @@ function checkSize(){
     <div id="close"></div>
     <div id="map_canvas" class="mapping"></div>
 </div>
-
+<div id="wrapper">
+    <div id="close1"></div>
+    <div id="underconst"></div>
+</div>
 
 <!-- 
 <div id="tally" class="modal fade" role="dialog">
@@ -522,10 +577,10 @@ function checkSize(){
         
         <li ><a href="#" data-hover="PARTICIPANTS">PARTICIPANTS</a></li>
         <li ><a href="#" data-hover="EVENTS">EVENTS</a></li>
-        <li ><a href="#" data-hover="SCHEDULE">SCHEDULE</a></li>
-        <li ><a href="#" data-hover="UPDATES">UPDATES</a></li>
-        <li ><a href="#" data-hover="HISTORY">HISTORY</a></li>
-        <li ><a href="#" class="last" data-hover="MASHAL">MASHAL</a></li>
+        <li ><a href="#" class="under" data-hover="SCHEDULE">SCHEDULE</a></li>
+        <li ><a href="#" class="under" data-hover="UPDATES">UPDATES</a></li>
+        <li ><a href="#" class="under" data-hover="HISTORY">HISTORY</a></li>
+        <li ><a href="#" class="under last" data-hover="MASHAL">MASHAL</a></li>
         
       </ul>
       </div>
