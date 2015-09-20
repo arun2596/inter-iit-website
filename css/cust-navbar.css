@@ -95,7 +95,7 @@ color:rgba(255,255,255,0.8);
 }
 
 .navbar #nav > .active > a {
-    color:rgba(207, 169, 6,1);
+    color:rgba(245,220,29,1);
     background-color: transparent;
 }
 
@@ -126,7 +126,7 @@ color:rgba(255,255,255,0.8);
 	padding: 10px 0;
 	max-width: 0;
 	/*border-bottom: 2px solid rgba(207, 169, 6,0.8);*/
-	color: rgba(207, 169, 6, 1);
+	color: rgba(245,220,29,1);
 	content: attr(data-hover);
 	-webkit-transition: max-width 0.5s;
 	-moz-transition: max-width 0.5s;
