@@ -7,11 +7,12 @@
 <link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
 
 <style>
-
-@-moz-document url-prefix() { 
-  .trivia {
-     bottom:-38px;
-  }
+@-moz-document url-prefix() {
+    /*@media (min-width: 1200px){*/
+    .trivia {
+        bottom:-48.85px;
+    }
+  /*}*/
 }
 #background {
                 width: 100%;
@@ -19,6 +20,54 @@
                 position: absolute;
                 z-index: -10;
             }
+      #map_wrapper {
+        position: absolute;
+        right: 0;
+  top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    padding: 5px;
+    border-radius: 5px; 
+    visibility: hidden;
+    z-index: 10000;
+}
+
+#map_canvas {
+  margin:auto;
+  top: 6%;
+    width: 60%;
+    height: 80%;
+}
+#close{
+  color: white;
+  cursor: pointer;
+    background: rgba(0,0,0,1);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.5);
+    position: relative;
+    top: 7%;
+    left: 80%;
+    z-index: 10001;
+}
+#close:before{
+  content: "\f2d7";
+  font-family: 'Ionicons';
+  speak: none;
+  font-size: 25px;
+  position: relative;
+  top: -3px;
+  left: 8px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+
+}
 </style>
 
 </head>
@@ -50,7 +99,103 @@
                 }, 5000);
            }
 </script>
+<script>
+    jQuery(function($) {
+    // Asynchronously Load the map API 
+    var script = document.createElement('script');
+    script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+    document.body.appendChild(script);
+}); 
 
+function initialize() {
+    var map;
+    var bounds = new google.maps.LatLngBounds();
+    var mapOptions = {
+        mapTypeId: 'roadmap'
+    };
+                    
+    // Display a map on the page
+    map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+    map.setTilt(45);
+        
+    // Multiple Markers
+    var markers = [
+        ['Sports Complex', 12.986734, 80.232968],
+        ['Chemplast Cricket Ground', 12.988297, 80.226209],
+        ['Football Ground',12.988172, 80.227367],
+        ['Hockey Ground',12.988036, 80.228097],
+        ['SAC',12.989311, 80.237849],
+        ['Swimming Pool',12.988527, 80.236874],
+        ['Tennis Court',12.987463, 80.230998],
+        ['Basketball Court',12.987319, 80.231703],
+        ['IIT Stadium',12.992194, 80.236758]
+    ];
+                        
+    // Info Window Content
+    var infoWindowContent = [
+        ['<div class="info_content">' +
+        '<h5>Sports Complex</h5>'+'</div>'],
+        ['<div class="info_content">' +
+        '<h5>Chemplast Cricket Ground</h5>'+'</div>'],
+        ['<div class="info_content">' +
+        '<h5>Football Ground</h5>'+'</div>'],
+        ['<div class="info_content">' +
+        '<h5>Hockey Ground</h5>'+'</div>'],
+        ['<div class="info_content">' +
+        '<h5>Students Activity Center</h5>'+'</div>'],
+        ['<div class="info_content">' +
+        '<h5>Swimming Pool</h5>'+'</div>'],
+        ['<div class="info_content">' +
+        '<h5>Tennis Court</h5>'+'</div>'],
+        ['<div class="info_content">' +
+        '<h5>Basketball Court</h5>'+'</div>'],
+        ['<div class="info_content">' +
+        '<h5>IIT Stadium</h5>'+'</div>']
+    ];
+        
+    // Display multiple markers on a map
+    var infoWindow = new google.maps.InfoWindow(), marker, i;
+    
+    // Loop through our array of markers & place each one on the map  
+    for( i = 0; i < markers.length; i++ ) {
+        var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+        bounds.extend(position);
+        marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            title: markers[i][0]
+        });
+        
+        // Allow each marker to have an info window    
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+                infoWindow.setContent(infoWindowContent[i][0]);
+                infoWindow.open(map, marker);
+            }
+        })(marker, i));
+
+        // Automatically center the map fitting all markers on the screen
+        map.fitBounds(bounds);
+    }
+
+    // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+        this.setZoom(15);
+        google.maps.event.removeListener(boundsListener);
+    });
+    
+}
+$(function() {
+       $('.hi-icon-map').click(function() {
+           $('#map_wrapper').css({'visibility':'visible'});
+           return false;
+       });
+       $('#close').click(function() {
+           $('#map_wrapper').css({'visibility':'hidden'});
+           return false;
+       });        
+   });
+</script>
 <body onload="run();">
 <img id="background" alt="background" src="static/img/sky.jpg" />
   <!-- Place this tag in your head or just before your close body tag. -->
@@ -66,8 +211,8 @@ $(document).ready(function() {
 
     $(window).resize(checkSize);
 
-    var array=["Welcome to Inter IIT 2015","Wilt Chamberlain didn't win MVP the year he scored 50.4 points and grabbed 22.9 rebounds per game."];
-    i=1;
+    var array=["Welcome to Inter IIT Sports Meet 2015.","IIT Madras is hosting the 51st Inter IIT Sports Meet.","The first Inter IIT Sports Meet was conducted at Bombay in 1961.","If Michael Phelps were a country, he'd rank no. 35 on all-time olympic gold medal list.","Lala Amarnath is the only bowler to dismiss Don Bradman hit wicket in Test cricket.","The first person to win Olympic gold in tennis basically just showed up and won.","Table tennis was banned in the Soviet Union from ca 1930 to 1950. The sport was believed to be harmful to the eyes.","The most goals scored by an individual in an Olympic men's hockey final is 5 by Balbir Singh Sr.","Wilt Chamberlain didn't win MVP the year he scored 50.4 points and grabbed 22.9 rebounds per game.","The very first game of basketball was played with a football.","In 1966 the FIFA World Cup trophy was stolen and later found by a dog days before the tournament began."];
+    i=1;x=0;
     $('#text').text(array[0]);
 
     // function func1(){
@@ -89,19 +234,19 @@ $(document).ready(function() {
       });
         $('#text').text(array[i]);
         $box = $('#wrap');
-    // $box.children().each(function(){
-    if ($box.width() < $('#text').width()) {
+        if(x==0){
+          $('#text').unwrap();
+          x=1;
+        }
+    if ($('.facts').width() < $('#text').width()) {
       $('#text').wrap('<marquee>');
+      x=0;
     }
-    if ($box.width() > $('#text').width()){
-      $('#text').unwrap();
-    }
-    
       i++;
-      i=i%2;
+      i=i%11;
       },2000);
         
-    },16000);
+    },18000);
 
    $(".navbar-toggle").click(function(){
     if ($(".collapse.in").css("display")!="block"){
@@ -135,7 +280,7 @@ $(document).ready(function() {
       
         $('.hi-icon-trivia').css({
         "box-shadow": "0 0 0 4px rgba(0,0,0,0.6)",
-  "background-color": "rgba(0,0,0,0.8)",
+  "background-color": "rgba(0,0,0,1)",
   "color":"rgba(255,255,255,1)"  
 
       });
@@ -158,6 +303,8 @@ function checkSize(){
         "box-shadow": "0 0 0 45px rgba(0,0,0,0.8)",
         WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
         MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+        MsTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+        OTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
        transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
       },function(){$(this).attr('src', 'static/icons/brand.png');
       $('.circle').css({
@@ -165,6 +312,8 @@ function checkSize(){
         "box-shadow": "0 0 0 0px rgba(0,0,0,0.8)",
         WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
         MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+        OTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+        MsTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
        transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
     });
   //     $('.logo').hover(
@@ -198,6 +347,8 @@ function checkSize(){
         "box-shadow": "0 0 0 30px rgba(0,0,0,0.8)",
         WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
         MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+        MsTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+        OTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
        transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
       },function(){$(this).attr('src', 'static/icons/brand.png');
       $('.circle').css({
@@ -205,6 +356,8 @@ function checkSize(){
         "box-shadow": "0 0 0 0px rgba(0,0,0,0.8)",
         WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
         MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+        MsTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+        OTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
        transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
     });
   //     $('.logo').hover(
@@ -236,6 +389,8 @@ function checkSize(){
         "box-shadow": "0 0 0 35px rgba(0,0,0,0.8)",
         WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
         MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+        MsTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+        OTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
        transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
       },function(){$(this).attr('src', 'static/icons/brand.png');
       $('.circle').css({
@@ -243,6 +398,8 @@ function checkSize(){
         "box-shadow": "0 0 0 0px rgba(0,0,0,0.8)",
         WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
         MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+        OTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
+        MsTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
        transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
     });    
     }
@@ -284,6 +441,12 @@ function checkSize(){
     </script>
 -->
 <img class="logo" src="static/img/middlecup.png">
+<div id="map_wrapper">
+    <div id="close"></div>
+    <div id="map_canvas" class="mapping"></div>
+</div>
+
+
 <!-- 
 <div id="tally" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -372,13 +535,14 @@ function checkSize(){
   <div class="container">
     <ul class="list-inline">
       <div class="hi-icon-effect-5">
-      <li class="social" style="float:left;"><a href="#" class="hi-icon hi-icon-trivia"></a></li>
+      <li class="social" style="float:left;"><a href="#" class="hi-icon1 hi-icon-trivia"></a></li>
       </div>
       <div class="trivia">
       <li class="facts">
         <div id="wrap"><span id="text">text here</span></div>
       </li>
     </div>
+
    <!--   <li><div class="leader" onclick="">
 <table id="ld">
   <thead data-toggle="modal" data-target="#tally" style="cursor:pointer;" >
@@ -398,7 +562,8 @@ function checkSize(){
   
     <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a">
       <li class="social"><a href="#" class="hi-icon hi-icon-contact">contact us</a></li>
-
+      <li class="social"><a href="#" class="hi-icon hi-icon-gallery">gallery</a></li>
+      <li class="social"><a href="#" class="hi-icon hi-icon-map">map</a></li>
       <li class="social"><a href="https://www.youtube.com/channel/UCF9MpmTR7MBjFj8t426aA3w" target=_blank class="hi-icon hi-icon-youtube">youtube</a></li><!-- 
       <li class="social"><a href="https://twitter.com/intent/follow?screen_name=twitter" class="hi-icon hi-icon-twitter">Follow @interiit</a></li> -->
       <!-- <li class="social"><div class="g-plusone" data-href="http://www.google.com" data-callback="myCallback" data-size="tall" expandTo="top"></div><a href="#" class="hi-icon hi-icon-googleplus">googleplus</a></li> -->
