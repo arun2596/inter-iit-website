@@ -1,0 +1,209 @@
+html{height:100%;}
+
+.modal-dialog{
+  //top: 20%;
+  margin-top:13%;
+}
+
+.modal-content{
+	margin:0;
+	color:#000;
+	font:11px/20px Arial, Helvetica, sans-serif;
+	background: #000 url(../images/bg-body.jpg) repeat-x;
+	background:url(../images/bg-page.jpg) no-repeat 50% 0;
+	//background: -webkit-linear-gradient(#348e2f, #85d580); /* For Safari 5.1 to 6.0 */
+    //background: -o-linear-gradient()#348e2f, #85d580); /* For Opera 11.1 to 12.0 */
+    //background: -moz-linear-gradient(#348e2f, #85d580); /* For Firefox 3.6 to 15 */
+    //background: linear-gradient(#348e2f, #85d580); /* Standard syntax (must be last) */
+	height:55%;
+	width:100%;
+
+}
+img {border-style:none;}
+a {
+	color:#00f;
+	text-decoration: none !important;
+}
+.cont{
+  width:25%;
+  display:inline-block;
+}
+/*page*/
+.page{
+	//background:url(../images/bg-page.jpg) no-repeat 50% 0;
+	min-height:100%;
+	padding:39px 0 0;
+	overflow:hidden;
+}
+/*wrapper*/
+#wrapperr {
+	//width:643px;
+	margin:0 auto;
+	background:url(../images/bg-wrapper.png) no-repeat 50% 100%;
+}
+/*nav*/
+
+/*main*/
+#main{
+	//background:url(../../images/bg-main.png) no-repeat;
+	background: url(../images/bg-main.png) no-repeat;
+	padding:200px 0px 50px;
+	border-radius:10px;
+	float:right;
+	display:inline;
+	width:75%;
+}
+/*main-holder*/
+/*.main-holder{
+	width:100%;
+//background:url(http://ibrandstudio.com/demo/elegant-dark-vcard/../images/bg-main.png) no-repeat 100% 100%;
+	padding:0 0 28px;
+	border-bottom-left-radius:10px;
+	
+}
+.main-holder:after{
+	content:'';
+	display:block;
+	clear:both;
+}*/
+/*main-frame*/
+.main-frame{
+	float:left;
+	width:100%;
+	border-bottom-left-radius:10px;
+	//background:url(../images/bg-main.png) repeat-y -653px 0;
+}
+/*main-content*/
+.main-content{
+	padding:0 33px;
+	margin:-283px 0 0;
+	min-height:302px;
+}
+/*header*/
+.hheader{
+  position:relative;
+  top:100px;
+	overflow:hidden;
+	padding:0 0 28px 3px;
+	left:-20px;
+	height:8.5em;
+}
+.emblem{
+	overflow:hidden;
+	float: left;
+    //text-indent: -9999px;
+   background: url(../images/logoblack.png) no-repeat;
+    //background: url(file:///C:/Entertainment/elegant-dark-vcard-html-css/../images/logo.png) no-repeat;
+    width: 140px;
+    height: 60px;
+}
+.logos a{
+  //position:relative;
+  //margin-left:110px;
+  float:left;
+  margin-top:5px;
+  color:#303030;
+  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
+  font-size:2em;
+	display:block;
+	height:100%;
+}
+/*photo*/
+.photo{
+	//background:url(../images/bg-photo.gif) no-repeat;
+	width:100px;
+	height:100px;
+}
+#p1{
+	//background:url(../images/director.jpg) no-repeat;
+}
+.photo img{display:block;}
+#main h1{
+	font:17px/15px 'DroidSerifBold', Arial, Helvetica, sans-serif;
+	margin:-10px 0 10px;
+	color:#fefefe;
+}
+/*container*/
+.ccontainer{
+	width:100%;
+	margin-left: 1.5em;
+}
+.ccontainer:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+/*sidebar*/
+.sidebar{
+  position:relative;
+  top:80px;
+	float:left;
+	width:120px;
+	font-size:10px;
+	padding:24px 0 0 25px;
+	margin:0 0 0 -48px;
+	background:url(../images/bg-sidebar.png) no-repeat;
+}
+/*content*/
+.content{
+  position:relative;
+  top:80px;
+  //left:2em;
+	float:right;
+	//width:250px;
+	letter-spacing:1px;
+	padding:18px 0 0 10px;
+}
+.divider{
+  background:url(../images/divider.png) no-repeat 0 100%;
+  padding:0 0 4px;
+  margin-top:-20px;
+  
+}
+/*text*/
+
+.content .text{
+  color:#181818;
+	padding:30px 0 4px;
+	font-size:1.4em;
+	margin:0 0 7px;
+}
+.contact{
+  width:30px;
+  height:30px;
+  border-radius:30px;
+}
+.content p{margin:0 0 9px;}
+.content h2{
+	font:11px/20px 'DroidSerifBold', Arial, Helvetica, sans-serif;
+	margin:0;
+}
+.details{
+  display:none;
+}
+.container-fluid{
+ // padding:0 !important;
+}
+.contacts{
+  margin-top:200px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.cont{
+  list-style-type: none;
+  margin: 0;
+  padding: 0 !important;
+  font-weight:bold;
+  background-color:rgba(0,0,0,0.8);
+  color:rgba(255,255,255,0.8);
+}
+.cont li{
+  //background:green;
+  cursor: pointer;
+  //color:rgba(255,255,255,0.8);
+  //padding-left:10px;
+  padding:9.5px 0px 9px 10px;
+  font-size:15px;
+}
+.activ{
+	color:#f5dc1d; !important
+}
