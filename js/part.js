@@ -142,67 +142,67 @@ $(function() {
 
        $('.1').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});
-              $('#map_canvas').html("Last year's hosts are looking to better their performance. With a strong shot at gold in womens' volleyball, cricket, football and athletics, the contingent will certainly put in their best and try to take home the crown of best sporting IIT. ");
+              $('#map_canvas').html("<h3>IIT BOMBAY</h3>Last year's hosts are looking to better their performance. With a strong shot at gold in womens' volleyball, cricket, football and athletics, the contingent will certainly put in their best and try to take home the crown of best sporting IIT. ");
        });
         $('.2').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});
-              $('#map_canvas').html("The Madras Sharks will be looking to give the contingent a head start after the aquatics meet, as they have invariably been doing for the last few years. After a lack luster performance at the 50th edition of the meet, the contingent is now fighting harder than ever to keep the trophy on home soil. In Madras, things are about to heat up, and a record 20th inter IIT title is on the cards. Favourites to win it at home? Maybe. Going for gold? Definitely.");
+              $('#map_canvas').html("<h3>IIT MADRAS</h3>The Madras Sharks will be looking to give the contingent a head start after the aquatics meet, as they have invariably been doing for the last few years. After a lack luster performance at the 50th edition of the meet, the contingent is now fighting harder than ever to keep the trophy on home soil. In Madras, things are about to heat up, and a record 20th inter IIT title is on the cards. Favourites to win it at home? Maybe. Going for gold? Definitely.");
        });
          $('.3').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});
-              $('#map_canvas').html("Volleyball, Badminton, Cricket and Football , all prospects for the Delhi contingent. Having a reputation for consistent performances, Delhi this time will be looking to win, and do so convincingly. Despite staunch opposition, spirits are high and a fight for the championship won't be through without seeing Delhi off.");
+              $('#map_canvas').html("<h3>IIT DELHI</h3>Volleyball, Badminton, Cricket and Football , all prospects for the Delhi contingent. Having a reputation for consistent performances, Delhi this time will be looking to win, and do so convincingly. Despite staunch opposition, spirits are high and a fight for the championship won't be through without seeing Delhi off.");
        });
           $('.4').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});
-              $('#map_canvas').html("<p>With an exceptionally strong water polo team, Kanpur are looking to get their Championship conquests off to a good start. The undisputed stalwarts of athletics, Kanpur are also looking to take home golds in badminton and hockey.</p><br><p>With a sizable contingent, and 2 General Championships in the last 2 years, Kanpur remain favourites to keep the trophy for a 3rd time running.</p>");
+              $('#map_canvas').html("<h3>IIT KANPUR</h3><p>With an exceptionally strong water polo team, Kanpur are looking to get their Championship conquests off to a good start. The undisputed stalwarts of athletics, Kanpur are also looking to take home golds in badminton and hockey.</p><br><p>With a sizable contingent, and 2 General Championships in the last 2 years, Kanpur remain favourites to keep the trophy for a 3rd time running.</p>");
        });
           $('.5').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});
-              $('#map_canvas').html("The oldest established IIT, IIT Kharagpur boasts of a large and highly trained contingent. Cricket, Football, Girls' badminton and water polo are their strengths, and they are ever ready to expand their reaches and take home the championship. Year after year, Kharagpur comes close to lifting the championship, and this time, will be hoping to do so.");
+              $('#map_canvas').html("<h3>IIT KHARAGPUR</h3>The oldest established IIT, IIT Kharagpur boasts of a large and highly trained contingent. Cricket, Football, Girls' badminton and water polo are their strengths, and they are ever ready to expand their reaches and take home the championship. Year after year, Kharagpur comes close to lifting the championship, and this time, will be hoping to do so.");
        });
           $('.6').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});
-              $('#map_canvas').html("Hosts of the 49th inter IIT, and the oldest ‘new' IIT has been unopposed for the last 3 years of women's table tennis. They also have good chances of bagging the gold in volleyball and girls' badminton. In search of their first championship, whether or not Guwahati can dethrone the ‘old IIT's' it a question that remains to be answered.");
+              $('#map_canvas').html("<h3>IIT GOWHATI</h3>Hosts of the 49th inter IIT, and the oldest 'new' IIT has been unopposed for the last 3 years of women's table tennis. They also have good chances of bagging the gold in volleyball and girls' badminton. In search of their first championship, whether or not Guwahati can dethrone the ‘old IIT's' it a question that remains to be answered.");
        });
           $('.7').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});
-              $('#map_canvas').html("IIT Roorkee have had a solid grip on girls' swimming events, football, squash and tennis over the last few editions of the sports meet. Narrowly missing out last year on the overall championship, the Roorkee contingent promises to bounce back and hit harder. Cricket, athletics, hockey and volleyball are other sports where Roorkee are poised to cause a few upsets.");
+              $('#map_canvas').html("<h3>IIT ROORKEE</h3>IIT Roorkee have had a solid grip on girls' swimming events, football, squash and tennis over the last few editions of the sports meet. Narrowly missing out last year on the overall championship, the Roorkee contingent promises to bounce back and hit harder. Cricket, athletics, hockey and volleyball are other sports where Roorkee are poised to cause a few upsets.");
        });
           $('.8').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});
-              $('#map_canvas').html("Table tennis champions Jodhpur are looking to keep the good times rolling by keeping the trophy with them this year as well. Apart from this, Jodhpur will be looking to bring everything they have to the ‘table' – pun intended. One sport at a time, IIT Jodhpur is staring at the face of an era of domination.");
+              $('#map_canvas').html("<h3>IIT JODHPUR</h3>Table tennis champions Jodhpur are looking to keep the good times rolling by keeping the trophy with them this year as well. Apart from this, Jodhpur will be looking to bring everything they have to the 'table' - pun intended. One sport at a time, IIT Jodhpur is staring at the face of an era of domination.");
        });
           $('.9').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});
-              $('#map_canvas').html("A relatively small contingent, Gandhinagar will be looking to cause trouble in every sport that they participate in. With a contingent like this around, upsets can never be far away. Prepare to be surprised.");
+              $('#map_canvas').html("<h3>IIT GANDHINAGAR</h3>A relatively small contingent, Gandhinagar will be looking to cause trouble in every sport that they participate in. With a contingent like this around, upsets can never be far away. Prepare to be surprised.");
        });
           $('.10').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});
-              $('#map_canvas').html("4th place finishers in football last year, Hyderabad are looking to improve their form, and make a big impact on the championship race. With renewed vigor, and oodles of talent, this contingent will take the game to their opponent. There's only one word on their minds. Win.");
+              $('#map_canvas').html("<h3>IIT HYDERABAD</h3>4th place finishers in football last year, Hyderabad are looking to improve their form, and make a big impact on the championship race. With renewed vigor, and oodles of talent, this contingent will take the game to their opponent. There's only one word on their minds. Win.");
        });
           $('.11').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});
-              $('#map_canvas').html("One of the newer IIT's, Bhubhaneshwar in it's search for it's first gold medal, will surely be looking to take one home this time. With a never say die attitude, and the willingness to fight till the last breath, the new kids on the block will be more ready than ever.");
+              $('#map_canvas').html("<h3>IIT BHUBHANESHWAR</h3>One of the newer IIT's, Bhubhaneshwar in it's search for it's first gold medal, will surely be looking to take one home this time. With a never say die attitude, and the willingness to fight till the last breath, the new kids on the block will be more ready than ever.");
        });
           $('.12').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});
-              $('#map_canvas').html("With an emerging presence in cricket and basketball, stiff competition awaits for those who must face IIT Varanasi. With a radical contingent, causing trouble for those who underestimate comes naturally. I wouldn't be surprise if this contingent took home a few golds this year. You were warned.");
+              $('#map_canvas').html("<h3>IIT BHU</h3>With an emerging presence in cricket and basketball, stiff competition awaits for those who must face IIT Varanasi. With a radical contingent, causing trouble for those who underestimate comes naturally. I wouldn't be surprise if this contingent took home a few golds this year. You were warned.");
        });
           $('.13').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});
-              $('#map_canvas').html("After a commendable performance in the 50th inter IIT sports meet, IIT Patna will be looking to give their opponents a run for their money. With a fresh start and new hope, this is one contingent to be paid heed to.");
+              $('#map_canvas').html("<h3>IIT PATNA</h3>After a commendable performance in the 50th inter IIT sports meet, IIT Patna will be looking to give their opponents a run for their money. With a fresh start and new hope, this is one contingent to be paid heed to.");
        });
           $('.14').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});
-              $('#map_canvas').html("Fierce competitors, IIT Ropar are hoping to take down the big guns this year. With preparations in full swing and spirits at an all time high, the Ropar contingent will be one to ruffle feathers, raise eyebrows and bruise egos.");
+              $('#map_canvas').html("<h3>IIT RORPAR</h3>Fierce competitors, IIT Ropar are hoping to take down the big guns this year. With preparations in full swing and spirits at an all time high, the Ropar contingent will be one to ruffle feathers, raise eyebrows and bruise egos.");
        });
           $('.15').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});
-              $('#map_canvas').html("A wild card, in the sense that we don't know what to expect from them, the Mandi contingent will definitely be turning heads this year.  After a good stint in girls' table tennis, a good performance this year seems all the more likely. The underdogs this year will try their best to leave a mark.");
+              $('#map_canvas').html("<h3>IIT MANDI</h3>A wild card, in the sense that we don't know what to expect from them, the Mandi contingent will definitely be turning heads this year.  After a good stint in girls' table tennis, a good performance this year seems all the more likely. The underdogs this year will try their best to leave a mark.");
        });
           $('.16').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});
-              $('#map_canvas').html("Recent entrants Indore are now accustomed to participating at the sports meet. With experience now under their belt, the opportunity to take things by storm now lies in their wake. Will IIT Indore take the championship this year? Will they excel at ‘indoor' sports? All jokes apart, only time will tell, but what is sure is that Indore will not go down without a fight.");
+              $('#map_canvas').html("<h3>IIT INDORE</h3>Recent entrants Indore are now accustomed to participating at the sports meet. With experience now under their belt, the opportunity to take things by storm now lies in their wake. Will IIT Indore take the championship this year? Will they excel at 'indoor' sports? All jokes apart, only time will tell, but what is sure is that Indore will not go down without a fight.");
        });
        $('#close').click(function() {
            $('#map_wrapper').css({'visibility':'hidden'});
