@@ -2,7 +2,7 @@
 
 { margin: 0; padding: 0; }
 
-body { background: url('static/img/backgroundplain.jpg');
+body { background: url('../static/img/backgroundplain.jpg');
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -74,7 +74,7 @@ z-index: -1;
   opacity: 1;
   z-index: 1;
   position: relative;
-  top: 7%;
+  top: 5%;
    width: 90%;
   height: 50%;
 
@@ -87,6 +87,7 @@ z-index: -1;
   height: 48%;
   border-radius: 50%;
   box-shadow: 5px 5px 5px black;
+  background-color: white;
 }
 .img{
   height: 100%;
