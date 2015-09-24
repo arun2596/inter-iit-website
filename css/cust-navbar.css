@@ -5,7 +5,9 @@ html{
 .container{
 	margin-top: 50px;
 }
-
+a{
+	cursor: pointer;
+}
 canvas{
 	z-index: -1;
 }
@@ -20,7 +22,7 @@ filter: alpha(opacity=80); /* For IE8 and earlier */
 .navbar-default{
 background-color:transparent;
 border:0;
-z-index: 100;
+z-index: 10;
 }
 
 .navbar-toggle{
@@ -103,13 +105,13 @@ color:rgba(255,255,255,0.8);
 	left: 25%;
 	top: 22.5%;
 	width:50%;
-	z-index: 0;
+	z-index: -1;
 	position: absolute;
-	-webkit-transition:all 0.2s;
+	/*-webkit-transition:all 0.2s;
 	-moz-transition:all 0.2s;
 	-o-transition:all 0.2s;
 	-ms-transition:all 0.2s;
-	transition: all 0.2s;
+	transition: all 0.2s;*/
 }
 /* Effect 11: text fill based on Lea Verou's animation http://dabblet.com/gist/6046779 */
 .cl-effect-11 a {
@@ -139,9 +141,32 @@ color:rgba(255,255,255,0.8);
 .cl-effect-11 a:focus::before {
 	max-width: 100%;
 }
-
+#load {
+    //margin: 0 0 10px;
+    color: white;
+    font-size: 42.5px;
+    position: relative;
+    top: 70%;
+    text-align: center;
+ }
+#cover1{
+	position:absolute;
+	height:100%;
+	width:100%;
+	top: 0;
+	left:0;
+	z-index:1002;
+	visibility: visible;
+	opacity: 1;
+	background:url('../static/img/loading.gif') no-repeat center;
+	background-color: rgb(28,28,28);
+	background-size:cover;
+	transition: opacity 1s, visibility 1s;
+    -webkit-transition: opacity 1s, visibility 1s;
+}
 .footer{
 	bottom:50px;
+	z-index: -1;
 }
 
 .copy{
@@ -499,6 +524,77 @@ th {
 		opacity: 1;
 	}
 }	
+#wrapper,#map_wrapper {
+        position: absolute;
+        right: 0;
+  top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    padding: 5px;
+    border-radius: 5px; 
+    visibility: hidden;
+    z-index: 100;
+}
+
+#map_canvas{
+  margin:auto;
+  position: relative;
+  top: 6%;
+    width: 60%;
+    height: 80%;
+}
+#underconst{
+  background: url('../static/img/underconst.gif') no-repeat center;
+  margin:auto;
+  position: relative;
+  top: 15%;
+    width: 40%;
+    height: 60%;
+}
+#close,#close1{
+  color: white;
+  cursor: pointer;
+    background: rgba(0,0,0,1);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.5);
+    position: relative;
+    top: 7%;
+    left: 80%;
+    z-index: 101;
+}
+#close1{
+  color: white;
+  cursor: pointer;
+    background: rgba(0,0,0,1);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.5);
+    position: relative;
+    top: 16%;
+    left: 70%;
+    z-index: 101;
+
+}
+#close:before,#close1:before{
+  content: "\f2d7";
+  font-family: 'Ionicons';
+  speak: none;
+  font-size: 25px;
+  position: relative;
+  top: -3px;
+  left: 8px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+
+}
 	
  @media (min-width: 1024px) and (max-width: 1199px){
  	.container{
@@ -651,11 +747,11 @@ th {
  		left:50%;
  		margin-left: -180px;
  		margin-top: -112px;
- 		-webkit-transition:all 0.5s;
+ 		/*-webkit-transition:all 0.5s;
  		-moz-transition:all 0.5s;
  		-o-transition:all 0.5s;
  		-ms-transition:all 0.5s;
- 		transition:all 0.5s;
+ 		transition:all 0.5s;*/
  	}
  	.navbar-header>img{
  		top:0;
@@ -667,7 +763,7 @@ th {
 		top: 5px;
 	}
 	.footer{
-		z-index: 1;
+		z-index: -1;
 	}
 	.hi-icon-wrap{
 		margin: 0;
@@ -704,6 +800,23 @@ th {
 	width: 40px;
 	height: 40px;
 	}
+	#map_canvas{
+    top:0;
+    width: 90%;
+    height: 90%;
+}
+#underconst{
+    width: 85%;
+    height: 60%;
+}
+#close{
+    top: 2%;
+    left: 90%;
+}
+#close1{
+  top:16%;
+  left: 90%;
+}
 }
  @media (max-width: 360px){
  	.copy{

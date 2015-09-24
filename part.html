@@ -2,8 +2,18 @@
 <head>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/cust-navbar.css">
+<link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
 
 <link rel="stylesheet" type="text/css" href="css/part.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script>
+  $(window).load(function() {
+    $('#cover1').css({"visibility":"hidden","opacity":"0"});
+});
+  </script>
 
 
 
@@ -11,16 +21,15 @@
 </head>
 <body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<div id="cover1"><div id="load">LOADING...</div></div>
 
 
 <div id="map_wrapper">
     <div id="close"></div>
     <div id="map_canvas" class="mapping"></div>
 </div>
-<div id="home"></div>
+<div id="home"><div class="hi-icon-effect-5 hi-icon-effect-5a">
+<a href="index.html" class="hi-icon hi-icon-home">home</a></div></a></div>
 <div class="container dd1" id="d1">
   <div class="row">
     <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">

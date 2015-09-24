@@ -162,7 +162,7 @@ $(function() {
        });
           $('.6').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});
-              $('#map_canvas').html("<h3>IIT GOWHATI</h3>Hosts of the 49th inter IIT, and the oldest 'new' IIT has been unopposed for the last 3 years of women's table tennis. They also have good chances of bagging the gold in volleyball and girls' badminton. In search of their first championship, whether or not Guwahati can dethrone the ‘old IIT's' it a question that remains to be answered.");
+              $('#map_canvas').html("<h3>IIT GUWAHATI</h3>Hosts of the 49th inter IIT, and the oldest 'new' IIT has been unopposed for the last 3 years of women's table tennis. They also have good chances of bagging the gold in volleyball and girls' badminton. In search of their first championship, whether or not Guwahati can dethrone the ‘old IIT's' it a question that remains to be answered.");
        });
           $('.7').click(function() {
            $('#map_wrapper').css({'visibility':'visible'});

@@ -8,6 +8,7 @@ body { background: url('../static/img/backgroundplain.jpg');
         -o-background-size: cover;
         background-size: cover;
         background-repeat: no-repeat;
+        background-attachment: fixed;
       }
       .back{
         position: absolute;
@@ -37,9 +38,10 @@ z-index: -1;
   background-color: black;
   position: relative;
   top: 10%;
+  padding-top: 0.5em;
   text-align: center;
     width: 60%;
-    height: 40%;
+    height: 50%;
     vertical-align: center;
 }
 #close{
@@ -140,4 +142,129 @@ z-index: -1;
   text-align: center;
 }
 
+.hi-icon {
+  display: inline-block;
+  font-size: 0px;
+  cursor: pointer;
+  /*margin: 15px 30px;*/
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  /*color: #fff;*/
+}
+
+.hi-icon:after {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  /*color: #fff;*/
+  height: 100%;
+  border-radius: 50%;
+  content: '';
+  -webkit-box-sizing: content-box; 
+  -moz-box-sizing: content-box; 
+  box-sizing: content-box;
+}
+
+.hi-icon:before {
+  font-family: 'Ionicons';
+  speak: none;
+  font-size: 48px;
+  line-height: 90px;
+  position: relative;
+    top: -18px;
+    /*color: #fff;*/
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+}
+.hi-icon-home:before{
+  content: "\f38f";
+  font-size: 50px;
+ 
+}
+.hi-icon-effect-5 .hi-icon {
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.8);
+  overflow: hidden;
+  color: rgb(255,255,255);
+  text-decoration: none;
+  -webkit-transition: background 0.5s, color 0.5s, box-shadow 0.5s;
+  -moz-transition: background 0.5s, color 0.5s, box-shadow 0.5s;
+  -o-transition: background 0.5s, color 0.5s, box-shadow 0.5s;
+  -ms-transition: background 0.5s, color 0.5s, box-shadow 0.5s;
+  transition: background 0.5s, color 0.5s, box-shadow 0.5s;
+}
+.hi-icon-effect-5 .hi-icon:after {
+  display: none;
+}
+.hi-icon-effect-5 .hi-icon-home:hover {
+  background: rgb(248, 148, 6);
+  box-shadow: 0 0 0 8px rgba(248, 148, 6,0.5);  
+  color: rgba(255,255,255,1);
+}
+.hi-icon-effect-5a .hi-icon:hover:before {
+  -webkit-animation: toRightFromLeft 0.5s forwards;
+  -moz-animation: toRightFromLeft 0.5s forwards;
+  animation: toRightFromLeft 0.5s forwards;
+}
+
+@-webkit-keyframes toRightFromLeft {
+  49% {
+    -webkit-transform: translate(100%);
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: translate(-100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes toRightFromLeft {
+  49% {
+    -moz-transform: translate(100%);
+  }
+  50% {
+    opacity: 0;
+    -moz-transform: translate(-100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+@keyframes toRightFromLeft {
+  49% {
+    transform: translate(100%);
+  }
+  50% {
+    opacity: 0;
+    transform: translate(-100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+@media (max-width: 767px){
+  #map_canvas{
+    top:4%;
+    height: 70%;
+    width: 80%;
+  }
+  #close{
+    top: 4%;
+    left: 90%;
+  }
+}
+@media (max-width: 360px){
+  #map_canvas{
+    height: 85%;
+  }
+}
 </style>

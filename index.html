@@ -1,6 +1,15 @@
 <!--youtube channel link+social buttons-->
 <html>
 <head>
+<meta charset="UTF-8">
+<meta name="description" content="Official website for Inter IIT Sports Meet 2015">
+<meta name="keywords" content="Inter IIT, Inter IIT Sports Meet 2015, 51st Inter IIT, interiit15, interiit14, iitm, IITM, IIT Madras, sports, iit, college, students">
+<meta name="author" content="Arun Ramakrishnan, Sourav Debnath, Minu Aswanth, Sasi Varnan, Anand Joseph Michael">
+<meta property="og:title" content="Inter IIT Sports Meet 2015">
+<meta property="og:type" content="Sports Meet">
+<meta property="og:url" content="">
+<meta property="article:publisher" content="https://www.facebook.com/interiit14">
+<meta property="og:site_name" content="Inter IIT Sports Meet 2015">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
@@ -9,6 +18,7 @@
 <link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
 <link media="all" rel="stylesheet" type="text/css" href="css/style.css" />
   <script src="js/script.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 <style>
 @-moz-document url-prefix() {
     /*@media (min-width: 1200px){*/
@@ -23,77 +33,6 @@
                 position: absolute;
                 z-index: -10;
             }
-  #wrapper,#map_wrapper {
-        position: absolute;
-        right: 0;
-  top: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0,0,0,0.6);
-    padding: 5px;
-    border-radius: 5px; 
-    visibility: hidden;
-    z-index: 10000;
-}
-
-#map_canvas{
-  margin:auto;
-  position: relative;
-  top: 6%;
-    width: 60%;
-    height: 80%;
-}
-#underconst{
-  background: url('static/img/underconst.gif') no-repeat center;
-  margin:auto;
-  position: relative;
-  top: 15%;
-    width: 40%;
-    height: 60%;
-}
-#close,#close1{
-  color: white;
-  cursor: pointer;
-    background: rgba(0,0,0,1);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(255,255,255,0.5);
-    position: relative;
-    top: 7%;
-    left: 80%;
-    z-index: 10001;
-}
-#close1{
-  color: white;
-  cursor: pointer;
-    background: rgba(0,0,0,1);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(255,255,255,0.5);
-    position: relative;
-    top: 16%;
-    left: 70%;
-    z-index: 10001;
-
-}
-#close:before,#close1:before{
-  content: "\f2d7";
-  font-family: 'Ionicons';
-  speak: none;
-  font-size: 25px;
-  position: relative;
-  top: -3px;
-  left: 8px;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  display: block;
-  -webkit-font-smoothing: antialiased;
-
-}
 </style>
 
 </head>
@@ -124,6 +63,11 @@
            }
 </script>
 <script>
+$(window).load(function() {
+    $('#cover1').css({"visibility":"hidden","opacity":"0"});
+    $('.footer').css({"z-index":"1"});
+    $('.logo').css({"z-index":"0"});
+});
     jQuery(function($) {
     // Asynchronously Load the map API 
     var script = document.createElement('script');
@@ -152,7 +96,8 @@ function initialize() {
         ['Swimming Pool',12.988527, 80.236874],
         ['Tennis Court',12.987463, 80.230998],
         ['Basketball Court',12.987319, 80.231703],
-        ['IIT Stadium',12.992194, 80.236758]
+        ['IIT Stadium',12.992194, 80.236758],
+        ['Volleyball Court',12.987159, 80.232469]
     ];
                         
     // Info Window Content
@@ -174,7 +119,9 @@ function initialize() {
         ['<div class="info_content">' +
         '<h5>Basketball Court</h5>'+'</div>'],
         ['<div class="info_content">' +
-        '<h5>IIT Stadium</h5>'+'</div>']
+        '<h5>IIT Stadium</h5>'+'</div>'],
+        ['<div class="info_content">' +
+        '<h5>Volleyball Court</h5>'+'</div>']
     ];
         
     // Display multiple markers on a map
@@ -209,257 +156,15 @@ function initialize() {
     });
     
 }
-$(function() {
-       $('.hi-icon-map').click(function() {
-           $('#map_wrapper').css({'visibility':'visible'});
-           return false;
-       });
-       $('#close').click(function() {
-           $('#map_wrapper').css({'visibility':'hidden'});
-           return false;
-       });
-       $('#close1').click(function() {
-           $('#wrapper').css({'visibility':'hidden'});
-           return false;
-       });
-       $('.under').click(function() {
-           $('#wrapper').css({'visibility':'visible'});
-           return false;
-       });        
-       
-   });
-$(document).mouseup(function (e)
-{
-    var container = $("#underconst");
 
-    if (!container.is(e.target) // if the target of the click isn't the container...
-        && container.has(e.target).length === 0) // ... nor a descendant of the container
-    {
-        $('#wrapper').css({'visibility':'hidden'});
-    }
-});
-$(document).mouseup(function (e)
-{
-    var container = $("#map_canvas");
-
-    if (!container.is(e.target) // if the target of the click isn't the container...
-        && container.has(e.target).length === 0) // ... nor a descendant of the container
-    {
-        $('#map_wrapper').css({'visibility':'hidden'});
-    }
-});
 </script>
 <body onload="run();">
 <img id="background" alt="background" src="static/img/sky.jpg" />
   <!-- Place this tag in your head or just before your close body tag. -->
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+<!-- <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-<script type="text/javascript">
-
-$(document).ready(function() {
-    
-    checkSize();
-
-    $(window).resize(checkSize);
-
-    var array=["Welcome to Inter IIT Sports Meet 2015.","IIT Madras is hosting the 51st Inter IIT Sports Meet.","The first Inter IIT Sports Meet was conducted at Bombay in 1961.","From 1970 to 1980, for eleven consecutive years, IIT Madras won the GC.","If Michael Phelps were a country, he'd rank no. 35 on all-time olympic gold medal list.","Lala Amarnath is the only bowler to dismiss Don Bradman hit wicket in Test cricket.","The first person to win Olympic gold in tennis basically just showed up and won.","Table tennis was banned in the Soviet Union from ca 1930 to 1950. The sport was believed to be harmful to the eyes.","The most goals scored by an individual in an Olympic men's hockey final is 5 by Balbir Singh Sr.","Wilt Chamberlain didn't win MVP the year he scored 50.4 points and grabbed 22.9 rebounds per game.","The very first game of basketball was played with a football.","In 1966 the FIFA World Cup trophy was stolen and later found by a dog days before the tournament began."];
-    i=1;x=0;
-    $('#text').text(array[0]);
-
-    // function func1(){
-    //   $('.facts').css({
-    //     "-webkit-transform":"translateX(50px)",
-    //     "transform":"translateX(50px)"
-    //   });​
-    // }
-    setInterval(function(){
-      $('.facts').css({
-        "-webkit-transform":"translateX(-100%)",
-        "transform":"translateX(-100%)"
-      });
-        
-      setTimeout(function(){
-        $('.facts').css({
-        "-webkit-transform":"translateX(0px)",
-        "transform":"translateX(0px)"
-      });
-        $('#text').text(array[i]);
-        $box = $('#wrap');
-        if(x==0){
-          $('#text').unwrap();
-          x=1;
-        }
-    if ($('.facts').width() < $('#text').width()) {
-      $('#text').wrap('<marquee>');
-      x=0;
-    }
-      i++;
-      i=i%12;
-      },2000);
-        
-    },18000);
-
-   $(".navbar-toggle").click(function(){
-    if ($(".collapse.in").css("display")!="block"){
-      $('.logo').css({
-        "-webkit-filter": "blur(5px)",
-  "-moz-filter": "blur(5px)",
-  "-o-filter": "blur(5px)",
-  "-ms-filter": "blur(5px)",
-  "filter": "blur(5px)"
-      });
-    }
-    if ($(".collapse.in").css("display")=="block"){
-      $('.logo').css({
-        "-webkit-filter": "blur(0px)",
-  "-moz-filter": "blur(0px)",
-  "-o-filter": "blur(0px)",
-  "-ms-filter": "blur(0px)",
-  "filter": "blur(0px)"
-      });
-    }
-  });
-    setInterval(function(){
-      setTimeout(function(){
-      $('.hi-icon-trivia').css({
-        "background": "#f5dc1d",
- "box-shadow": "0 0 0 8px rgba(245,220,29,0.6)",
-  "color":"rgba(255,255,255,1)"  
-
-      });
-    },500);
-      
-        $('.hi-icon-trivia').css({
-        "box-shadow": "0 0 0 4px rgba(0,0,0,0.6)",
-  "background-color": "rgba(0,0,0,1)",
-  "color":"rgba(255,255,255,1)"  
-
-      });
-      
-    },1500);
-    
-    // function func(){
-    //   setTimeout(fun1,3000);
-    //   setTimeout(function{})
-    // },5000);
-
-});
-
-function checkSize(){
-    if($(".container").css("width")>="1000px"){
-      $('#image').hover(
-      function(){$(this).attr('src', 'static/icons/brand2.png');
-      $('.circle').css({
-        "background": "rgba(0,0,0,0.8)",
-        "box-shadow": "0 0 0 45px rgba(0,0,0,0.8)",
-        WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
-        MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-        MsTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-        OTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-       transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
-      },function(){$(this).attr('src', 'static/icons/brand.png');
-      $('.circle').css({
-        "background":"transparent",
-        "box-shadow": "0 0 0 0px rgba(0,0,0,0.8)",
-        WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
-        MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-        OTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-        MsTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-       transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
-    });
-  //     $('.logo').hover(
-  //       function(){
-  //         $('.logo').css({
-  //       "-webkit-filter": "blur(5px)",
-  // "-moz-filter": "blur(5px)",
-  // "-o-filter": "blur(5px)",
-  // "-ms-filter": "blur(5px)",
-  // "filter": "blur(5px)"
-  //     });
-  //       },
-  //       function(){
-  //         $('.logo').css({
-  //       "-webkit-filter": "blur(0px)",
-  // "-moz-filter": "blur(0px)",
-  // "-o-filter": "blur(0px)",
-  // "-ms-filter": "blur(0px)",
-  // "filter": "blur(0px)"
-  //     });
-  //       }
-  //       );
-    }
-    
-    if($(".container").css("width") == "830px"){
-
-      $('#image').hover(
-      function(){$(this).attr('src', 'static/icons/brand2.png');
-      $('.circle').css({
-        "background": "rgba(0,0,0,0.8)",
-        "box-shadow": "0 0 0 30px rgba(0,0,0,0.8)",
-        WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
-        MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-        MsTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-        OTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-       transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
-      },function(){$(this).attr('src', 'static/icons/brand.png');
-      $('.circle').css({
-        "background":"transparent",
-        "box-shadow": "0 0 0 0px rgba(0,0,0,0.8)",
-        WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
-        MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-        MsTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-        OTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-       transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
-    });
-  //     $('.logo').hover(
-  //       function(){
-  //         $('.logo').css({
-  //       "-webkit-filter": "blur(5px)",
-  // "-moz-filter": "blur(5px)",
-  // "-o-filter": "blur(5px)",
-  // "-ms-filter": "blur(5px)",
-  // "filter": "blur(5px)"
-  //     });
-  //       },
-  //       function(){
-  //         $('.logo').css({
-  //       "-webkit-filter": "blur(0px)",
-  // "-moz-filter": "blur(0px)",
-  // "-o-filter": "blur(0px)",
-  // "-ms-filter": "blur(0px)",
-  // "filter": "blur(0px)"
-  //     });
-  //       }
-  //       );
-    }
-    if($(".social").css("clear")=="right"){
-      $('#image').hover(
-      function(){$(this).attr('src', 'static/icons/brand2.png');
-      $('.circle').css({
-        "background": "rgba(0,0,0,0.8)",
-        "box-shadow": "0 0 0 35px rgba(0,0,0,0.8)",
-        WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
-        MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-        MsTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-        OTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-       transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
-      },function(){$(this).attr('src', 'static/icons/brand.png');
-      $('.circle').css({
-        "background":"transparent",
-        "box-shadow": "0 0 0 0px rgba(0,0,0,0.8)",
-        WebkitTransition: "background 0.2s, color 0.2s, box-shadow 0.2s",  
-        MozTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-        OTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-        MsTransition: "background 0.2s, color 0.2s,box-shadow 0.2s",
-       transition: "background 0.2s, color 0.2s, box-shadow 0.2s"});
-    });    
-    }
-}
-    
-
-</script>
+ -->
 
 
 <!--<script>
@@ -502,57 +207,8 @@ function checkSize(){
     <div id="close1"></div>
     <div id="underconst"></div>
 </div>
+<div id="cover1"><div id="load">LOADING...</div></div>
 
-<!-- 
-<div id="tally" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Leaderboard</h4>
-      </div>
-      <div class="modal-body">
-        <table id="modtab">
-  <thead>
-    <tr>
-    <th>Tally</th>
-    <th></th>
-  </tr>
-  </thead>
-  <tbody class="body1">
-  <tr>
-    <td>IIT Madras</td>
-    <td><img src="static/icons/iitm.png"></td>
-    <td>4</td>
-  </tr>
-  <tr>
-    <td>IIT Bombay</td>
-    <td><img src="static/icons/iitm.png"></td>
-    <td>2</td>
-  </tr> 
-  <tr>
-    <td>IIT Delhi</td>
-    <td><img src="static/icons/iitm.png"></td>
-    <td>2</td>
-  </tr>
-   <tr>
-    <td>IIT Kharagpur</td>
-    <td><img src="static/icons/iitm.png"></td>
-    <td>0</td>
-  </tr>
-  </tbody>
-</table>
-      </div>
-       <div class="modal-footer">
-        <button type="button" class="btn btn-default" onClick="javascript:sortData();">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
- -->
 <nav class="navbar navbar-default" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="container">
@@ -574,14 +230,14 @@ function checkSize(){
     <div class="collapse navbar-collapse" id="navbar-collapse">
      
       <ul class="nav navbar-nav cl-effect-11" id="nav">
-        <li class="active first"><a href="#" data-hover="HOME">HOME</a></li>
+        <li class="active first"><a data-hover="HOME">HOME</a></li>
         
-        <li ><a href="#" data-hover="PARTICIPANTS">PARTICIPANTS</a></li>
-        <li ><a href="#" data-hover="EVENTS">EVENTS</a></li>
-        <li ><a href="#" class="under" data-hover="SCHEDULE">SCHEDULE</a></li>
-        <li ><a href="#" class="under" data-hover="UPDATES">UPDATES</a></li>
-        <li ><a href="#" class="under" data-hover="HISTORY">HISTORY</a></li>
-        <li ><a href="#" class="under last" data-hover="MASHAL">MASHAL</a></li>
+        <li ><a href="part.html" data-hover="PARTICIPANTS">PARTICIPANTS</a></li>
+        <li ><a href="events.html" data-hover="EVENTS">EVENTS</a></li>
+        <li ><a class="under" data-hover="SCHEDULE">SCHEDULE</a></li>
+        <li ><a class="under" data-hover="UPDATES">UPDATES</a></li>
+        <li ><a class="under" data-hover="HISTORY">HISTORY</a></li>
+        <li ><a class="under last" data-hover="MASHAL">MASHAL</a></li>
         
       </ul>
       </div>
@@ -591,7 +247,7 @@ function checkSize(){
   <div class="container">
     <ul class="list-inline">
       <div class="hi-icon-effect-5">
-      <li class="social" style="float:left;"><a href="#" class="hi-icon1 hi-icon-trivia"></a></li>
+      <li class="social" style="float:left;"><a class="hi-icon1 hi-icon-trivia"></a></li>
       </div>
       <div class="trivia">
       <li class="facts">
@@ -599,37 +255,21 @@ function checkSize(){
       </li>
     </div>
 
-   <!--   <li><div class="leader" onclick="">
-<table id="ld">
-  <thead data-toggle="modal" data-target="#tally" style="cursor:pointer;" >
-    <tr>
-    <th>Tally</th>
-    <th></th>
-  </tr>
-  </thead>
-  <tbody class="body2">
-  </tbody>
-</table>
-</div></li>
--->
-    <!-- <li><div class="copy">
-    &copy;  all copyrights reserved to iitmadras
-    </div></li> -->
   
     <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a">
-      <li class="social"><a href="#" class="hi-icon hi-icon-contact" data-toggle="modal" data-target="#myModal">contact us</a></li>
-      <li class="social"><a href="#" class="hi-icon hi-icon-gallery under">gallery</a></li>
-      <li class="social"><a href="#" class="hi-icon hi-icon-map">map</a></li>
+      <li class="social"><a class="hi-icon hi-icon-contact" data-toggle="modal" data-target="#myModal">contact us</a></li>
+      <li class="social"><a class="hi-icon hi-icon-gallery under">gallery</a></li>
+      <li class="social"><a class="hi-icon hi-icon-map">map</a></li>
       <li class="social"><a href="https://www.youtube.com/channel/UCF9MpmTR7MBjFj8t426aA3w" target=_blank class="hi-icon hi-icon-youtube">youtube</a></li><!-- 
       <li class="social"><a href="https://twitter.com/intent/follow?screen_name=twitter" class="hi-icon hi-icon-twitter">Follow @interiit</a></li> -->
-      <!-- <li class="social"><div class="g-plusone" data-href="http://www.google.com" data-callback="myCallback" data-size="tall" expandTo="top"></div><a href="#" class="hi-icon hi-icon-googleplus">googleplus</a></li> -->
+      <!-- <li class="social"><div class="g-plusone" data-href="http://www.google.com" data-callback="myCallback" data-size="tall" expandTo="top"></div><a class="hi-icon hi-icon-googleplus">googleplus</a></li> -->
       <li class="social"><a href="https://www.facebook.com/interiit14" target=_blank class="hi-icon hi-icon-fblike">fblike</a></li>
 
       <!-- 
-        <li class="social g"><a href="#"><img src="static/icons/google_plus.png" height="20px">  Share</a></li>
-        <li class="social t"><a href="#"><img src="static/icons/twitter.png"  height="20px">  Tweet</a></li>
-        <li class="social fbs"><a href="#">Share</a></li>
-        <li class="social fb"><a href="#"><img src="static/icons/FB.png"  height="20px"> Like</a></li> -->
+        <li class="social g"><a><img src="static/icons/google_plus.png" height="20px">  Share</a></li>
+        <li class="social t"><a><img src="static/icons/twitter.png"  height="20px">  Tweet</a></li>
+        <li class="social fbs"><a>Share</a></li>
+        <li class="social fb"><a><img src="static/icons/FB.png"  height="20px"> Like</a></li> -->
       </div>
     </ul>  
     </div> 
@@ -668,7 +308,7 @@ function checkSize(){
                 <div class="emblem">
                 </div>
                 <!--logo-->
-                <strong class="logos"><a href="#">Prof. K.P.Sudheer</a></strong>
+                <strong class="logos"><a>Prof. K.P.Sudheer</a></strong>
               </div>
               <!--container-->
               <div class="ccontainer">
@@ -702,7 +342,7 @@ function checkSize(){
                 <div class="emblem">
                 </div>
                 <!--logo-->
-                <strong class="logos"><a href="#">Dr. P. Raju</a></strong>
+                <strong class="logos"><a>Dr. P. Raju</a></strong>
               </div>
               <!--container-->
               <div class="ccontainer">
@@ -737,7 +377,7 @@ function checkSize(){
                 <div class="emblem">
                 </div>
                 <!--logo-->
-                <strong class="logos"><a href="#">Bipin Babu</a></strong>
+                <strong class="logos"><a>Bipin Babu</a></strong>
               </div>
               <!--container-->
               <div class="ccontainer">
@@ -771,7 +411,7 @@ function checkSize(){
                 <div class="emblem">
                 </div>
                 <!--logo-->
-                <strong class="logos"><a href="#">Sethu Madhavan</a></strong>
+                <strong class="logos"><a>Sethu Madhavan</a></strong>
               </div>
               <!--container-->
               <div class="ccontainer">
@@ -804,7 +444,7 @@ function checkSize(){
                 <div class="emblem">
                 </div>
                 <!--logo-->
-                <strong class="logos"><a href="#">Divya Manglam</a></strong>
+                <strong class="logos"><a>Divya Manglam</a></strong>
               </div>
               <!--container-->
               <div class="ccontainer">
@@ -838,7 +478,7 @@ function checkSize(){
                 <div class="emblem">
                 </div>
                 <!--logo-->
-                <strong class="logos"><a href="#">Shimon Joseph</a></strong>
+                <strong class="logos"><a>Shimon Joseph</a></strong>
               </div>
               <!--container-->
               <div class="ccontainer">
@@ -872,7 +512,7 @@ function checkSize(){
                 <div class="emblem">
                 </div>
                 <!--logo-->
-                <strong class="logos"><a href="#">Aditya Malpani</a></strong>
+                <strong class="logos"><a>Aditya Malpani</a></strong>
               </div>
               <!--container-->
               <div class="ccontainer">
