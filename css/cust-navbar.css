@@ -163,6 +163,9 @@ color:rgba(255,255,255,0.8);
 	background-size:cover;
 	transition: opacity 1s, visibility 1s;
     -webkit-transition: opacity 1s, visibility 1s;
+    -moz-transition: opacity 1s, visibility 1s;
+    -ms-transition: opacity 1s, visibility 1s;
+    -o-transition: opacity 1s, visibility 1s;
 }
 .footer{
 	bottom:50px;

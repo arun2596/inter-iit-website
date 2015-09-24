@@ -149,12 +149,18 @@ $(document).ready(function() {
     setInterval(function(){
       $('.facts').css({
         "-webkit-transform":"translateX(-100%)",
+        "-moz-transform":"translateX(-100%)",
+        "-ms-transform":"translateX(-100%)",
+        "-o-transform":"translateX(-100%)",
         "transform":"translateX(-100%)"
       });
         
       setTimeout(function(){
         $('.facts').css({
         "-webkit-transform":"translateX(0px)",
+        "-moz-transform":"translateX(0px)",
+        "-ms-transform":"translateX(0px)",
+        "-o-transform":"translateX(0px)",
         "transform":"translateX(0px)"
       });
         $('#text').text(array[i]);
