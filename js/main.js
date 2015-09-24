@@ -120,12 +120,12 @@ $(document).mouseup(function (e)
 
 $(document).mouseup(function (e)
 {
-    var container = $("#modal-content");
+    var container = $(".modal-dialog");
 
     if (!container.is(e.target) // if the target of the click isn't the container...
         && container.has(e.target).length === 0) // ... nor a descendant of the container
     {
-        $('#map_wrapper').css({'visibility':'hidden'});
+        $('.modal').css({'display':'none'});
         bluroff1();
     }
 });
