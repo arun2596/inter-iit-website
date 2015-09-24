@@ -38,6 +38,10 @@
 	background-size:cover;
 	transition: opacity 1s, visibility 1s;
     -webkit-transition: opacity 1s, visibility 1s;
+    -moz-transition: opacity 1s, visibility 1s;
+    -ms-transition: opacity 1s, visibility 1s;
+    -o-transition: opacity 1s, visibility 1s;
+
 }
 		.imageInCircle{
 			position: absolute;
@@ -244,6 +248,8 @@ img {max-width: 100%;}
   content: '';
   -webkit-box-sizing: content-box; 
   -moz-box-sizing: content-box; 
+  -ms-box-sizing: content-box; 
+	-o-box-sizing: content-box; 
   box-sizing: content-box;
 }
 
@@ -290,6 +296,8 @@ img {max-width: 100%;}
 .hi-icon-effect-5a .hi-icon1:hover:before {
   -webkit-animation: toRightFromLeft 0.5s forwards;
   -moz-animation: toRightFromLeft 0.5s forwards;
+  -ms-animation: toRightFromLeft 0.5s forwards;
+	-o-animation: toRightFromLeft 0.5s forwards;
   animation: toRightFromLeft 0.5s forwards;
 }
 
@@ -316,6 +324,30 @@ img {max-width: 100%;}
   51% {
     opacity: 1;
   }
+}
+@-ms-keyframes toRightFromLeft {
+	49% {
+		-webkit-transform: translate(100%);
+	}
+	50% {
+		opacity: 0;
+		-webkit-transform: translate(-100%);
+	}
+	51% {
+		opacity: 1;
+	}
+}
+@-o-keyframes toRightFromLeft {
+	49% {
+		-webkit-transform: translate(100%);
+	}
+	50% {
+		opacity: 0;
+		-webkit-transform: translate(-100%);
+	}
+	51% {
+		opacity: 1;
+	}
 }
 @keyframes toRightFromLeft {
   49% {
