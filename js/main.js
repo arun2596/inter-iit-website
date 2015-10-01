@@ -97,6 +97,10 @@ $(function() {
            $('#sch_wrapper').css({'visibility':'hidden'});
            return false;
        });
+       $('#close4').click(function() {
+           $('#up_wrapper').css({'visibility':'hidden'});
+           return false;
+       });
        $('.under').click(function() {
            $('#wrapper').css({'visibility':'visible'});
            return false;
@@ -107,6 +111,10 @@ $(function() {
        });       
        $('.sch').click(function() {
            $('#sch_wrapper').css({'visibility':'visible'});
+           return false;
+       });
+       $('.up').click(function() {
+           $('#up_wrapper').css({'visibility':'visible'});
            return false;
        });        
        
@@ -141,6 +149,17 @@ $(document).mouseup(function (e)
         && container.has(e.target).length === 0) // ... nor a descendant of the container
     {
         $('#sch_wrapper').css({'visibility':'hidden'});
+        bluroff1();     
+    }
+});
+$(document).mouseup(function (e)
+{
+    var container = $("#update");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        $('#up_wrapper').css({'visibility':'hidden'});
         bluroff1();     
     }
 });
@@ -237,6 +256,11 @@ $(document).ready(function() {
   });
     $(".sch").click(function(){
     if ($("#sch_wrapper").css("visibility")=="visible"){
+      bluron1();
+    }
+    });
+    $(".up").click(function(){
+    if ($("#up_wrapper").css("visibility")=="visible"){
       bluron1();
     }
     });
