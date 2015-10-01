@@ -89,8 +89,24 @@ $(function() {
            $('#wrapper').css({'visibility':'hidden'});
            return false;
        });
+       $('#close2').click(function() {
+           $('#his_wrapper').css({'visibility':'hidden'});
+           return false;
+       });
+       $('#close3').click(function() {
+           $('#sch_wrapper').css({'visibility':'hidden'});
+           return false;
+       });
        $('.under').click(function() {
            $('#wrapper').css({'visibility':'visible'});
+           return false;
+       });
+       $('.hist').click(function() {
+           $('#his_wrapper').css({'visibility':'visible'});
+           return false;
+       });       
+       $('.sch').click(function() {
+           $('#sch_wrapper').css({'visibility':'visible'});
            return false;
        });        
        
@@ -103,6 +119,28 @@ $(document).mouseup(function (e)
         && container.has(e.target).length === 0) // ... nor a descendant of the container
     {
         $('#wrapper').css({'visibility':'hidden'});
+        bluroff1();     
+    }
+});
+$(document).mouseup(function (e)
+{
+    var container = $("#history");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        $('#his_wrapper').css({'visibility':'hidden'});
+        bluroff1();     
+    }
+});
+$(document).mouseup(function (e)
+{
+    var container = $("#schedule");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        $('#sch_wrapper').css({'visibility':'hidden'});
         bluroff1();     
     }
 });
@@ -189,6 +227,16 @@ $(document).ready(function() {
   });
    $(".under").click(function(){
     if ($("#wrapper").css("visibility")=="visible"){
+      bluron1();
+    }
+    });
+   $(".hist").click(function(){
+    if ($("#his_wrapper").css("visibility")=="visible"){
+      bluron1();
+    }
+  });
+    $(".sch").click(function(){
+    if ($("#sch_wrapper").css("visibility")=="visible"){
       bluron1();
     }
     });

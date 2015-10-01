@@ -557,7 +557,7 @@ th {
 		opacity: 1;
 	}
 }	
-#wrapper,#map_wrapper {
+#sch_wrapper,#his_wrapper,#wrapper,#map_wrapper {
         position: absolute;
         right: 0;
   top: 0;
@@ -585,7 +585,32 @@ th {
     width: 40%;
     height: 60%;
 }
-#close,#close1{
+#history{
+	background: url('../static/img/parchment.jpg') no-repeat center;
+	background-size: cover; 
+  margin:auto;
+  position: relative;
+  top: 5%;
+  text-align: left;
+  font-size: 1.1em;
+    text-shadow: 0.2px 0.2px black;
+  padding: 1em;
+    width: 65%;
+    height: 80%;
+    box-shadow: 0 0 0 5px rgba(0,0,0,0.6);	
+    overflow: auto;
+}
+#schedule{
+	background: url('../static/img/Day1.jpg') no-repeat center;
+	background-size: contain; 
+  margin:auto;
+  position: relative;
+  top: 9%;
+    width: 70%;
+    height: 75%;
+    overflow: none;
+}
+#close{
   color: white;
   cursor: pointer;
     background: rgba(0,0,0,1);
@@ -612,7 +637,35 @@ th {
     z-index: 101;
 
 }
-#close:before,#close1:before{
+#close2{
+  color: white;
+  cursor: pointer;
+    background: rgba(0,0,0,1);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.5);
+    position: relative;
+    top: 5%;
+    left: 83%;
+    z-index: 101;
+
+}
+#close3{
+	color: white;
+  cursor: pointer;
+    background: rgba(0,0,0,1);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.5);
+    position: relative;
+    top: 10%;
+    left: 85%;
+    z-index: 101;
+
+}
+#close:before,#close1:before,#close2:before,#close3:before{
   content: "\f2d7";
   font-family: 'Ionicons';
   speak: none;
@@ -745,6 +798,16 @@ th {
 	width: 40px;
 	height: 40px;
 	}
+	#history{
+		top: 2%;
+		font-size: 1.1em;
+		width: 80%;
+		height: 87%;
+	}
+	#close2{
+		top: 2%;
+		left: 90%;
+	}
  }
 
  @media (max-width: 767px){
@@ -850,6 +913,16 @@ th {
   top:16%;
   left: 90%;
 }
+#history{
+		top: 1%;
+		font-size: 1em;
+		width: 83%;
+		height: 90%;
+	}
+	#close2{
+		top: 1%;
+		left: 92%;
+	}
 }
  @media (max-width: 360px){
  	.copy{
