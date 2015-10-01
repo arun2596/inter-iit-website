@@ -36,7 +36,7 @@
 	visibility: visible;
 	opacity: 1;
 	background:url('static/img/loading.gif') no-repeat center;
-	background-color: black;
+	background-color: rgb(28,28,28);
 	background-size:cover;
 	transition: opacity 1s, visibility 1s;
     -webkit-transition: opacity 1s, visibility 1s;
@@ -173,7 +173,16 @@ img {max-width: 100%;}
 	#generic-tabs ul li a { font-size:1.6em; padding: 1.2em 2em; line-height: 16px; } 
 	#close{left: 90%;} 
 }
+@media(max-width: 767px){
 
+#cover1{
+	background-size: contain;
+}
+#load{
+	top:60%;
+	font-size: 20px;
+}
+}
 #close{
   color: white;
   cursor: pointer;
