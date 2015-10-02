@@ -197,12 +197,8 @@ $(document).ready(function() {
     i=1;x=0;
     $('#text').text(array[0]);
 
-    // function func1(){
-    //   $('.facts').css({
-    //     "-webkit-transform":"translateX(50px)",
-    //     "transform":"translateX(50px)"
-    //   });​
-    // }
+    
+    $('#myCarousel1,#myCarousel2').carousel();
     setInterval(function(){
       $('.facts').css({
         "-webkit-transform":"translateX(-100%)",
