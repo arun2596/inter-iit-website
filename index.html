@@ -1,10 +1,10 @@
-<!--youtube channel link+social buttons-->
+<!DOCTYPE html>
 <html>
 <head>
-  <link rel="icon" href="static/icons/favicon.ico" type="image/x-icon" />
-<link rel="shortcut icon" href="static/icons/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="static/icons/favicon.ico" type="image/x-icon" >
+<link rel="shortcut icon" href="static/icons/favicon.ico" type="image/x-icon" >
   <title>Inter IIT Sports Meet 2015</title>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 <meta name="description" content="Official website for Inter IIT Sports Meet 2015">
 <meta name="keywords" content="Inter IIT, Inter IIT Sports Meet 2015, 51st Inter IIT, interiit15, interiit14, iitm, IITM, IIT Madras, sports, iit, college, students">
 <meta name="author" content="Arun Ramakrishnan, Sourav Debnath, Minu Aswanth, Sasi Varnan, Anand Joseph Michael">
@@ -14,21 +14,26 @@
 <meta property="article:publisher" content="https://www.facebook.com/interiit14">
 <meta property="og:site_name" content="Inter IIT Sports Meet 2015">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" removeListener="stylesheet" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.js"></script>
 
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/cust-navbar.css">
 <link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
-<link media="all" rel="stylesheet" type="text/css" href="css/style.css" />
-  <script src="js/script.js"></script>
+<link media="all" rel="stylesheet" type="text/css" href="css/style.css">
+  <script type="text/javascript" src="js/script.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
-<style>
+<style type="text/css">
 @-moz-document url-prefix() {
     /*@media (min-width: 1200px){*/
     .trivia {
         bottom:-48.85px;
     }
   /*}*/
+}
+body{
+  overflow: hidden;
 }
 #background {
                 width: 100%;
@@ -38,12 +43,8 @@
             }
 </style>
 
-</head>
-
-
-
-<script src="js/rainyday.min.js"></script>
-<script>
+<script type="text/javascript" src="js/rainyday.min.js"></script>
+<script type="text/javascript">
             function run() {
                 var image = document.getElementById('background');
                 image.onload = function() {
@@ -65,7 +66,19 @@
                 }, 5000);
            }
 </script>
-<script>
+<script type="text/javascript">
+$(document).ready(function() { 
+  $('#detailID')
+    .dialog({ 
+      autoOpen: false, 
+      closeOnEscape: false,
+      closeText: "",
+      position: "top",
+      width: 700, 
+      height: 600,  
+      resizable: false, 
+      draggable: false });
+});
 $(window).load(function() {
     $('#cover1').css({"visibility":"hidden","opacity":"0"});
     $('.footer').css({"z-index":"1"});
@@ -170,47 +183,13 @@ function initialize() {
 }
 
 </script>
+</head>
+
+
 <body onload="run();">
-<img id="background" alt="background" src="static/img/sky.jpg" />
-  <!-- Place this tag in your head or just before your close body tag. -->
-<!-- <script src="https://apis.google.com/js/platform.js" async defer></script>
+<img id="background" alt="background" src="static/img/sky.jpg">
 
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
- -->
-
-
-<!--<script>
-
-   function myCallback(plusone) {
-
-      window.alert("URL: " + plusone.href + " state: " + plusone.state);
-
-   }
-
-</script>-->
-<!--<script type="text/javascript">
-
-    $(document).ready(function(){
-        var tableData = document.getElementById('modtab').getElementsByTagName('tbody').item(0);
-
-        var rowData = tableData.getElementsByTagName('tr'); 
-
-        for(var i = 0; i < rowData.length - 1; i++){
-            for(var j = 0; j < rowData.length - (i + 1); j++){
-
-                if(parseInt(rowData.item(j).getElementsByTagName('td').item(2).innerHTML) < parseInt(rowData.item(j+1).getElementsByTagName('td').item(2).innerHTML)){
-                    tableData.insertBefore(rowData.item(j+1),rowData.item(j));
-                }
-            }
-        }
-
-        var $code = $('.body1').clone();
-        $('.body2').append($code);
-
-    });
-    </script>
--->
-<img class="logo" src="static/img/middlecup.png">
+<img class="logo" src="static/img/middlecup.png" alt="middle-cup">
 <div id="map_wrapper">
     <div id="close"></div>
     <div id="map_canvas" class="mapping"></div>
@@ -221,29 +200,31 @@ function initialize() {
 </div>
 <div id="his_wrapper">
     <div id="close2"></div>
-    <div id="history"><img style="display:block;margin:0 auto 20px auto;" src="images/logoblack.png"/><p>Every year for over 50 years, every IIT has put forth their best athletes, to compete in what is now the largest college sporting fest in the country. Conducted in rotation between the older IIT’s, the only interruptions to this annual event have been at times of war.</p><p>The first inter IIT Sports Meet was held in 1961 at Bombay. It was subsequently held in Kharagpur and then Madras. Over 9 editions of the meet, from 1970 to 1980, Madras took home the championship every single time. IIT Madras has the distinction of having the highest number of General Championships (as they were referred to then), with a staggering 19. All IITians who share a passion for sport and the drive to glorify their institute, congregate every October and December, to show their mettle and temerity. 16 IIT’s will share the battle ground this year, with 2 new IIT’s participating on a provisional basis. As teams vie for gold in the 51st edition of the meet, the competition promises to be intense, and the arena is likely to heat up. As tensions soar, and adrenaline rushes, a mega event the likes of which has seldom been seen will draw to close, leaving only one winner. The Sports Meet is an embodiment of the IIT commitment to excel, the endeavor to triumph, the hard work, sweat, blood and tears of every single participant, and the hopes of thousands of their comrades. The championship is not just a bragging right, it is so much more. With faster times, higher lifts, and tougher competition year after year, the 51st inter IIT Sports Meet is poised to bring us some MadrasAction.</p></div>
+    <div id="history"><img style="display:block;margin:0 auto 20px auto;" src="images/logoblack.png" alt="history"><p>Every year for over 50 years, every IIT has put forth their best athletes, to compete in what is now the largest college sporting fest in the country. Conducted in rotation between the older IIT’s, the only interruptions to this annual event have been at times of war.</p><p>The first inter IIT Sports Meet was held in 1961 at Bombay. It was subsequently held in Kharagpur and then Madras. Over 9 editions of the meet, from 1970 to 1980, Madras took home the championship every single time. IIT Madras has the distinction of having the highest number of General Championships (as they were referred to then), with a staggering 19. All IITians who share a passion for sport and the drive to glorify their institute, congregate every October and December, to show their mettle and temerity. 16 IIT’s will share the battle ground this year, with 2 new IIT’s participating on a provisional basis. As teams vie for gold in the 51st edition of the meet, the competition promises to be intense, and the arena is likely to heat up. As tensions soar, and adrenaline rushes, a mega event the likes of which has seldom been seen will draw to close, leaving only one winner. The Sports Meet is an embodiment of the IIT commitment to excel, the endeavor to triumph, the hard work, sweat, blood and tears of every single participant, and the hopes of thousands of their comrades. The championship is not just a bragging right, it is so much more. With faster times, higher lifts, and tougher competition year after year, the 51st inter IIT Sports Meet is poised to bring us some MadrasAction.</p></div>
 </div>
-<div id="sch_wrapper">
+<div id="sch_wrapper" style="overflow:hidden;">
   <div id="close3"></div>
-  <div id="schedule">
+  <div id="detailID" style="overflow:hidden;"><base target="_blank" /><iframe  name="fixture" id="fixture" style="width:100%;height:100%;"  align="center" valign="top" scrolling="no" frameborder="no" src="static/img/fixtures.pdf"></iframe></div>
+  
+  <!-- <div id="schedule">
     <div id="myCarousel1" class="carousel slide">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel1" data-slide-to="1"></li>
     <li data-target="#myCarousel1" data-slide-to="2"></li>
     <li data-target="#myCarousel1" data-slide-to="3"></li>
-  </ol>
+  </ol-->
   <!-- Carousel items -->
-  <div class="carousel-inner">
-    <div class="active item"><img src="static/img/Day1.jpg"/></div>
-    <div class="item"><img src="static/img/Day2.jpg"/></div>
-    <div class="item"><img src="static/img/Day3.jpg"/></div>
-    <div class="item"><img src="static/img/Day4.jpg"/></div>
+  <!--div class="carousel-inner">
+    <div class="active item"><img src="static/img/Day1.jpg"></div>
+    <div class="item"><img src="static/img/Day2.jpg"></div>
+    <div class="item"><img src="static/img/Day3.jpg"></div>
+    <div class="item"><img src="static/img/Day4.jpg"></div>
   </div>
   <!-- Carousel nav -->
-  <a class="carousel-control left" href="#myCarousel1" data-slide="prev" style="font-size:50px;">&lsaquo;</a>
+  <!--a class="carousel-control left" href="#myCarousel1" data-slide="prev" style="font-size:50px;">&lsaquo;</a>
   <a class="carousel-control right" href="#myCarousel1" data-slide="next" style="font-size:50px;">&rsaquo;</a>
-</div></div>
+</div></div> -->
 </div>
 <div id="up_wrapper">
   <div id="close4"></div>
@@ -257,10 +238,10 @@ function initialize() {
   </ol>
   <!-- Carousel items -->
   <div class="carousel-inner">
-    <div class="active item"><img src="static/img/Update1.jpg"/></div>
-    <div class="item"><img src="static/img/Update2.jpg"/></div>
-    <div class="item"><img src="static/img/Update3.jpg"/></div>
-    <div class="item"><img src="static/img/Update4.jpg"/></div>
+    <div class="active item"><img src="static/img/Update1.jpg"></div>
+    <div class="item"><img src="static/img/Update2.jpg"></div>
+    <div class="item"><img src="static/img/Update3.jpg"></div>
+    <div class="item"><img src="static/img/Update4.jpg"></div>
   </div>
   <!-- Carousel nav -->
   <a class="carousel-control left" href="#myCarousel2" data-slide="prev" style="font-size:50px;">&lsaquo;</a>
@@ -286,7 +267,7 @@ function initialize() {
       <img id="image" src="static/icons/brand.png">
     </div>
     
-    </script>
+    
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse">
      
@@ -295,7 +276,7 @@ function initialize() {
         
         <li ><a href="part.html" data-hover="PARTICIPANTS">PARTICIPANTS</a></li>
         <li ><a href="events.html" data-hover="EVENTS">EVENTS</a></li>
-        <li ><a class="sch" data-hover="SCHEDULE">SCHEDULE</a></li>
+        <li ><a class="sch" data-hover="FIXTURES">FIXTURES</a></li>
         <li ><a class="up" data-hover="UPDATES">UPDATES</a></li>
         <li ><a class="hist" data-hover="HISTORY">HISTORY</a></li>
         <li ><a class="under last" data-hover="TALLY">TALLY</a></li>
@@ -335,7 +316,7 @@ function initialize() {
     </ul>  
     </div> 
   </div>
-</div>
+
 
 
 <!-- AnandJM -->

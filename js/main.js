@@ -95,6 +95,7 @@ $(function() {
        });
        $('#close3').click(function() {
            $('#sch_wrapper').css({'visibility':'hidden'});
+           $('#detailID').dialog( "close" );
            return false;
        });
        $('#close4').click(function() {
@@ -111,6 +112,7 @@ $(function() {
        });       
        $('.sch').click(function() {
            $('#sch_wrapper').css({'visibility':'visible'});
+           $('#detailID').dialog( "open" );
            return false;
        });
        $('.up').click(function() {
@@ -149,6 +151,7 @@ $(document).mouseup(function (e)
         && container.has(e.target).length === 0) // ... nor a descendant of the container
     {
         $('#sch_wrapper').css({'visibility':'hidden'});
+        $('#detailID').dialog( "close" );
         bluroff1();     
     }
 });
